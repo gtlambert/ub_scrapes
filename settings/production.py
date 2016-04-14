@@ -8,5 +8,6 @@ DATABASES = {}
 DATABASES['default'] = dj_database_url.config()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 ALLOWED_HOSTS = ['*']
-DEBUG = True
+# DEBUG = True
+DEBUG = False
 SECRET_KEY = os.environ.get('SECRET_KEY')
