@@ -1,8 +1,8 @@
 from .base import *
 from .keys import *
 
-# DEBUG = True
-DEBUG = False
+DEBUG = True
+# DEBUG = False
 ALLOWED_HOSTS = ['127.0.0.1']
 
 DATABASES = {
