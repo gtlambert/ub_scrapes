@@ -9,6 +9,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'scrapes',
+    'demo_data',
 )
 
 MIDDLEWARE_CLASSES = (

@@ -507,3 +507,867 @@ TemplateDoesNotExist: home.html
                 AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
                 AND pg_catalog.pg_table_is_visible(c.oid); args=None
 [14/Apr/2016 15:02:59] DEBUG [django.db.backends:89] (0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+[14/Apr/2016 15:22:43] DEBUG [django.db.backends:89] (0.002) 
+            SELECT c.relname, c.relkind
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid); args=None
+[14/Apr/2016 15:22:43] DEBUG [django.db.backends:89] (0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+[14/Apr/2016 15:22:43] DEBUG [django.db.backends:89] (0.000) 
+            SELECT c.relname, c.relkind
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid); args=None
+[14/Apr/2016 15:22:43] DEBUG [django.db.backends:89] (0.000) SET CONSTRAINTS ALL IMMEDIATE; args=None
+[14/Apr/2016 15:22:43] DEBUG [django.db.backends:89] (0.000) SET CONSTRAINTS ALL DEFERRED; args=None
+[14/Apr/2016 15:22:43] DEBUG [django.db.backends:89] (0.000) SET CONSTRAINTS ALL IMMEDIATE; args=None
+[14/Apr/2016 15:22:43] DEBUG [django.db.backends:89] (0.000) SET CONSTRAINTS ALL DEFERRED; args=None
+[14/Apr/2016 15:22:43] DEBUG [django.db.backends.schema:102] CREATE TABLE "demo_data_category" ("id" serial NOT NULL PRIMARY KEY, "num" integer NOT NULL); (params None)
+[14/Apr/2016 15:22:43] DEBUG [django.db.backends:89] (0.112) CREATE TABLE "demo_data_category" ("id" serial NOT NULL PRIMARY KEY, "num" integer NOT NULL); args=None
+[14/Apr/2016 15:22:43] DEBUG [django.db.backends.schema:102] CREATE TABLE "demo_data_review" ("id" serial NOT NULL PRIMARY KEY, "num" integer NOT NULL, "category_id" integer NOT NULL); (params None)
+[14/Apr/2016 15:22:43] DEBUG [django.db.backends:89] (0.004) CREATE TABLE "demo_data_review" ("id" serial NOT NULL PRIMARY KEY, "num" integer NOT NULL, "category_id" integer NOT NULL); args=None
+[14/Apr/2016 15:22:43] DEBUG [django.db.backends.schema:102] ALTER TABLE "demo_data_review" ADD CONSTRAINT "demo_data_review_category_id_32b0cdad_fk_demo_data_category_id" FOREIGN KEY ("category_id") REFERENCES "demo_data_category" ("id") DEFERRABLE INITIALLY DEFERRED; (params [])
+[14/Apr/2016 15:22:43] DEBUG [django.db.backends:89] (0.011) ALTER TABLE "demo_data_review" ADD CONSTRAINT "demo_data_review_category_id_32b0cdad_fk_demo_data_category_id" FOREIGN KEY ("category_id") REFERENCES "demo_data_category" ("id") DEFERRABLE INITIALLY DEFERRED; args=[]
+[14/Apr/2016 15:22:43] DEBUG [django.db.backends.schema:102] CREATE INDEX "demo_data_review_b583a629" ON "demo_data_review" ("category_id"); (params [])
+[14/Apr/2016 15:22:43] DEBUG [django.db.backends:89] (0.001) CREATE INDEX "demo_data_review_b583a629" ON "demo_data_review" ("category_id"); args=[]
+[14/Apr/2016 15:22:43] DEBUG [django.db.backends:89] (0.004) 
+            SELECT c.relname, c.relkind
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid); args=None
+[14/Apr/2016 15:22:43] DEBUG [django.db.backends:89] (0.005) INSERT INTO "django_migrations" ("app", "name", "applied") VALUES ('demo_data', '0001_initial', '2016-04-14T14:22:43.353000+00:00'::timestamptz) RETURNING "django_migrations"."id"; args=('demo_data', u'0001_initial', datetime.datetime(2016, 4, 14, 14, 22, 43, 353000, tzinfo=<UTC>))
+[14/Apr/2016 15:22:43] DEBUG [django.db.backends:89] (0.000) 
+            SELECT c.relname, c.relkind
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid); args=None
+[14/Apr/2016 15:22:43] DEBUG [django.db.backends:89] (0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+[14/Apr/2016 15:22:43] DEBUG [django.db.backends:89] (0.002) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."model" = 'logentry' AND "django_content_type"."app_label" = 'admin'); args=('logentry', 'admin')
+[14/Apr/2016 15:22:43] DEBUG [django.db.backends:89] (0.001) SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ( "auth_permission"."content_type_id" = "django_content_type"."id" ) WHERE "auth_permission"."content_type_id" IN (1) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC; args=(1,)
+[14/Apr/2016 15:22:43] DEBUG [django.db.backends:89] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'admin'; args=('admin',)
+[14/Apr/2016 15:22:43] DEBUG [django.db.backends:89] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."model" = 'permission' AND "django_content_type"."app_label" = 'auth'); args=('permission', 'auth')
+[14/Apr/2016 15:22:43] DEBUG [django.db.backends:89] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."model" = 'group' AND "django_content_type"."app_label" = 'auth'); args=('group', 'auth')
+[14/Apr/2016 15:22:43] DEBUG [django.db.backends:89] (0.001) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."model" = 'user' AND "django_content_type"."app_label" = 'auth'); args=('user', 'auth')
+[14/Apr/2016 15:22:43] DEBUG [django.db.backends:89] (0.001) SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ( "auth_permission"."content_type_id" = "django_content_type"."id" ) WHERE "auth_permission"."content_type_id" IN (2, 3, 4) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC; args=(2, 3, 4)
+[14/Apr/2016 15:22:43] DEBUG [django.db.backends:89] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'auth'; args=('auth',)
+[14/Apr/2016 15:22:43] DEBUG [django.db.backends:89] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."model" = 'contenttype' AND "django_content_type"."app_label" = 'contenttypes'); args=('contenttype', 'contenttypes')
+[14/Apr/2016 15:22:43] DEBUG [django.db.backends:89] (0.001) SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ( "auth_permission"."content_type_id" = "django_content_type"."id" ) WHERE "auth_permission"."content_type_id" IN (5) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC; args=(5,)
+[14/Apr/2016 15:22:43] DEBUG [django.db.backends:89] (0.001) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'contenttypes'; args=('contenttypes',)
+[14/Apr/2016 15:22:43] DEBUG [django.db.backends:89] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."model" = 'session' AND "django_content_type"."app_label" = 'sessions'); args=('session', 'sessions')
+[14/Apr/2016 15:22:43] DEBUG [django.db.backends:89] (0.001) SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ( "auth_permission"."content_type_id" = "django_content_type"."id" ) WHERE "auth_permission"."content_type_id" IN (6) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC; args=(6,)
+[14/Apr/2016 15:22:43] DEBUG [django.db.backends:89] (0.001) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'sessions'; args=('sessions',)
+[14/Apr/2016 15:22:43] DEBUG [django.db.backends:89] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."model" = 'category' AND "django_content_type"."app_label" = 'demo_data'); args=('category', 'demo_data')
+[14/Apr/2016 15:22:43] DEBUG [django.db.backends:89] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."model" = 'category' AND "django_content_type"."app_label" = 'demo_data'); args=('category', 'demo_data')
+[14/Apr/2016 15:22:43] DEBUG [django.db.backends:89] (0.005) INSERT INTO "django_content_type" ("app_label", "model") VALUES ('demo_data', 'category') RETURNING "django_content_type"."id"; args=('demo_data', 'category')
+[14/Apr/2016 15:22:43] DEBUG [django.db.backends:89] (0.001) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."model" = 'review' AND "django_content_type"."app_label" = 'demo_data'); args=('review', 'demo_data')
+[14/Apr/2016 15:22:43] DEBUG [django.db.backends:89] (0.001) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."model" = 'review' AND "django_content_type"."app_label" = 'demo_data'); args=('review', 'demo_data')
+[14/Apr/2016 15:22:43] DEBUG [django.db.backends:89] (0.000) INSERT INTO "django_content_type" ("app_label", "model") VALUES ('demo_data', 'review') RETURNING "django_content_type"."id"; args=('demo_data', 'review')
+[14/Apr/2016 15:22:43] DEBUG [django.db.backends:89] (0.000) SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ( "auth_permission"."content_type_id" = "django_content_type"."id" ) WHERE "auth_permission"."content_type_id" IN (8, 9) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC; args=(8, 9)
+[14/Apr/2016 15:22:43] DEBUG [django.db.backends:89] (0.005) INSERT INTO "auth_permission" ("name", "content_type_id", "codename") VALUES ('Can add category', 8, 'add_category'), ('Can change category', 8, 'change_category'), ('Can delete category', 8, 'delete_category'), ('Can add review', 9, 'add_review'), ('Can change review', 9, 'change_review'), ('Can delete review', 9, 'delete_review'); args=(u'Can add category', 8, u'add_category', u'Can change category', 8, u'change_category', u'Can delete category', 8, u'delete_category', u'Can add review', 9, u'add_review', u'Can change review', 9, u'change_review', u'Can delete review', 9, u'delete_review')
+[14/Apr/2016 15:22:43] DEBUG [django.db.backends:89] (0.001) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'demo_data'; args=('demo_data',)
+[14/Apr/2016 15:25:34] DEBUG [django.db.backends:89] (0.003) 
+            SELECT c.relname, c.relkind
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid); args=None
+[14/Apr/2016 15:25:34] DEBUG [django.db.backends:89] (0.001) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+[14/Apr/2016 15:31:27] DEBUG [django.db.backends:89] (0.001) INSERT INTO "demo_data_category" ("num") VALUES (1) RETURNING "demo_data_category"."id"; args=(1,)
+[14/Apr/2016 15:31:27] DEBUG [django.db.backends:89] (0.001) INSERT INTO "demo_data_category" ("num") VALUES (2) RETURNING "demo_data_category"."id"; args=(2,)
+[14/Apr/2016 15:31:27] DEBUG [django.db.backends:89] (0.001) INSERT INTO "demo_data_category" ("num") VALUES (3) RETURNING "demo_data_category"."id"; args=(3,)
+[14/Apr/2016 15:31:27] DEBUG [django.db.backends:89] (0.001) INSERT INTO "demo_data_category" ("num") VALUES (4) RETURNING "demo_data_category"."id"; args=(4,)
+[14/Apr/2016 15:31:27] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_category" ("num") VALUES (5) RETURNING "demo_data_category"."id"; args=(5,)
+[14/Apr/2016 15:31:27] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_category" ("num") VALUES (6) RETURNING "demo_data_category"."id"; args=(6,)
+[14/Apr/2016 15:31:27] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_category" ("num") VALUES (7) RETURNING "demo_data_category"."id"; args=(7,)
+[14/Apr/2016 15:31:27] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_category" ("num") VALUES (8) RETURNING "demo_data_category"."id"; args=(8,)
+[14/Apr/2016 15:31:27] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_category" ("num") VALUES (9) RETURNING "demo_data_category"."id"; args=(9,)
+[14/Apr/2016 15:31:27] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_category" ("num") VALUES (10) RETURNING "demo_data_category"."id"; args=(10,)
+[14/Apr/2016 15:31:34] DEBUG [django.db.backends:89] (0.001) SELECT "demo_data_category"."id", "demo_data_category"."num" FROM "demo_data_category" LIMIT 21; args=()
+[14/Apr/2016 15:31:46] DEBUG [django.db.backends:89] (0.001) SELECT "demo_data_category"."id", "demo_data_category"."num" FROM "demo_data_category" LIMIT 21; args=()
+[14/Apr/2016 15:35:31] DEBUG [django.db.backends:89] (0.000) SELECT "demo_data_category"."id", "demo_data_category"."num" FROM "demo_data_category"; args=()
+[14/Apr/2016 15:35:31] DEBUG [django.db.backends:89] (0.001) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (1, 1) RETURNING "demo_data_review"."id"; args=(1, 1)
+[14/Apr/2016 15:35:31] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (2, 1) RETURNING "demo_data_review"."id"; args=(2, 1)
+[14/Apr/2016 15:35:31] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (3, 1) RETURNING "demo_data_review"."id"; args=(3, 1)
+[14/Apr/2016 15:35:31] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (4, 1) RETURNING "demo_data_review"."id"; args=(4, 1)
+[14/Apr/2016 15:35:31] DEBUG [django.db.backends:89] (0.001) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (5, 1) RETURNING "demo_data_review"."id"; args=(5, 1)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (6, 1) RETURNING "demo_data_review"."id"; args=(6, 1)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (7, 1) RETURNING "demo_data_review"."id"; args=(7, 1)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (8, 1) RETURNING "demo_data_review"."id"; args=(8, 1)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (9, 1) RETURNING "demo_data_review"."id"; args=(9, 1)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (10, 1) RETURNING "demo_data_review"."id"; args=(10, 1)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (1, 2) RETURNING "demo_data_review"."id"; args=(1, 2)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.001) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (2, 2) RETURNING "demo_data_review"."id"; args=(2, 2)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.001) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (3, 2) RETURNING "demo_data_review"."id"; args=(3, 2)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (4, 2) RETURNING "demo_data_review"."id"; args=(4, 2)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (5, 2) RETURNING "demo_data_review"."id"; args=(5, 2)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (6, 2) RETURNING "demo_data_review"."id"; args=(6, 2)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (7, 2) RETURNING "demo_data_review"."id"; args=(7, 2)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (8, 2) RETURNING "demo_data_review"."id"; args=(8, 2)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (9, 2) RETURNING "demo_data_review"."id"; args=(9, 2)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.001) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (10, 2) RETURNING "demo_data_review"."id"; args=(10, 2)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (1, 3) RETURNING "demo_data_review"."id"; args=(1, 3)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (2, 3) RETURNING "demo_data_review"."id"; args=(2, 3)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (3, 3) RETURNING "demo_data_review"."id"; args=(3, 3)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (4, 3) RETURNING "demo_data_review"."id"; args=(4, 3)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (5, 3) RETURNING "demo_data_review"."id"; args=(5, 3)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.001) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (6, 3) RETURNING "demo_data_review"."id"; args=(6, 3)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (7, 3) RETURNING "demo_data_review"."id"; args=(7, 3)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (8, 3) RETURNING "demo_data_review"."id"; args=(8, 3)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (9, 3) RETURNING "demo_data_review"."id"; args=(9, 3)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (10, 3) RETURNING "demo_data_review"."id"; args=(10, 3)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (1, 4) RETURNING "demo_data_review"."id"; args=(1, 4)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.001) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (2, 4) RETURNING "demo_data_review"."id"; args=(2, 4)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (3, 4) RETURNING "demo_data_review"."id"; args=(3, 4)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (4, 4) RETURNING "demo_data_review"."id"; args=(4, 4)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (5, 4) RETURNING "demo_data_review"."id"; args=(5, 4)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (6, 4) RETURNING "demo_data_review"."id"; args=(6, 4)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.001) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (7, 4) RETURNING "demo_data_review"."id"; args=(7, 4)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (8, 4) RETURNING "demo_data_review"."id"; args=(8, 4)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (9, 4) RETURNING "demo_data_review"."id"; args=(9, 4)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (10, 4) RETURNING "demo_data_review"."id"; args=(10, 4)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.001) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (1, 5) RETURNING "demo_data_review"."id"; args=(1, 5)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (2, 5) RETURNING "demo_data_review"."id"; args=(2, 5)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (3, 5) RETURNING "demo_data_review"."id"; args=(3, 5)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (4, 5) RETURNING "demo_data_review"."id"; args=(4, 5)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.001) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (5, 5) RETURNING "demo_data_review"."id"; args=(5, 5)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (6, 5) RETURNING "demo_data_review"."id"; args=(6, 5)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (7, 5) RETURNING "demo_data_review"."id"; args=(7, 5)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (8, 5) RETURNING "demo_data_review"."id"; args=(8, 5)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.001) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (9, 5) RETURNING "demo_data_review"."id"; args=(9, 5)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (10, 5) RETURNING "demo_data_review"."id"; args=(10, 5)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (1, 6) RETURNING "demo_data_review"."id"; args=(1, 6)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (2, 6) RETURNING "demo_data_review"."id"; args=(2, 6)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.001) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (3, 6) RETURNING "demo_data_review"."id"; args=(3, 6)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (4, 6) RETURNING "demo_data_review"."id"; args=(4, 6)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (5, 6) RETURNING "demo_data_review"."id"; args=(5, 6)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (6, 6) RETURNING "demo_data_review"."id"; args=(6, 6)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (7, 6) RETURNING "demo_data_review"."id"; args=(7, 6)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.001) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (8, 6) RETURNING "demo_data_review"."id"; args=(8, 6)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (9, 6) RETURNING "demo_data_review"."id"; args=(9, 6)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (10, 6) RETURNING "demo_data_review"."id"; args=(10, 6)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (1, 7) RETURNING "demo_data_review"."id"; args=(1, 7)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (2, 7) RETURNING "demo_data_review"."id"; args=(2, 7)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (3, 7) RETURNING "demo_data_review"."id"; args=(3, 7)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.001) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (4, 7) RETURNING "demo_data_review"."id"; args=(4, 7)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (5, 7) RETURNING "demo_data_review"."id"; args=(5, 7)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (6, 7) RETURNING "demo_data_review"."id"; args=(6, 7)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (7, 7) RETURNING "demo_data_review"."id"; args=(7, 7)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.001) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (8, 7) RETURNING "demo_data_review"."id"; args=(8, 7)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (9, 7) RETURNING "demo_data_review"."id"; args=(9, 7)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (10, 7) RETURNING "demo_data_review"."id"; args=(10, 7)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (1, 8) RETURNING "demo_data_review"."id"; args=(1, 8)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.001) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (2, 8) RETURNING "demo_data_review"."id"; args=(2, 8)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (3, 8) RETURNING "demo_data_review"."id"; args=(3, 8)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (4, 8) RETURNING "demo_data_review"."id"; args=(4, 8)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (5, 8) RETURNING "demo_data_review"."id"; args=(5, 8)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.001) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (6, 8) RETURNING "demo_data_review"."id"; args=(6, 8)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (7, 8) RETURNING "demo_data_review"."id"; args=(7, 8)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (8, 8) RETURNING "demo_data_review"."id"; args=(8, 8)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (9, 8) RETURNING "demo_data_review"."id"; args=(9, 8)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.001) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (10, 8) RETURNING "demo_data_review"."id"; args=(10, 8)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (1, 9) RETURNING "demo_data_review"."id"; args=(1, 9)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (2, 9) RETURNING "demo_data_review"."id"; args=(2, 9)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (3, 9) RETURNING "demo_data_review"."id"; args=(3, 9)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.001) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (4, 9) RETURNING "demo_data_review"."id"; args=(4, 9)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (5, 9) RETURNING "demo_data_review"."id"; args=(5, 9)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (6, 9) RETURNING "demo_data_review"."id"; args=(6, 9)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (7, 9) RETURNING "demo_data_review"."id"; args=(7, 9)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.001) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (8, 9) RETURNING "demo_data_review"."id"; args=(8, 9)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (9, 9) RETURNING "demo_data_review"."id"; args=(9, 9)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (10, 9) RETURNING "demo_data_review"."id"; args=(10, 9)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (1, 10) RETURNING "demo_data_review"."id"; args=(1, 10)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (2, 10) RETURNING "demo_data_review"."id"; args=(2, 10)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (3, 10) RETURNING "demo_data_review"."id"; args=(3, 10)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (4, 10) RETURNING "demo_data_review"."id"; args=(4, 10)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (5, 10) RETURNING "demo_data_review"."id"; args=(5, 10)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.001) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (6, 10) RETURNING "demo_data_review"."id"; args=(6, 10)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (7, 10) RETURNING "demo_data_review"."id"; args=(7, 10)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (8, 10) RETURNING "demo_data_review"."id"; args=(8, 10)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.000) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (9, 10) RETURNING "demo_data_review"."id"; args=(9, 10)
+[14/Apr/2016 15:35:32] DEBUG [django.db.backends:89] (0.001) INSERT INTO "demo_data_review" ("num", "category_id") VALUES (10, 10) RETURNING "demo_data_review"."id"; args=(10, 10)
+[14/Apr/2016 15:35:43] DEBUG [django.db.backends:89] (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'n8ldc660l8uz1c0pkcvprijiwbafi3hl' AND "django_session"."expire_date" > '2016-04-14T14:35:43.502000+00:00'::timestamptz); args=('n8ldc660l8uz1c0pkcvprijiwbafi3hl', datetime.datetime(2016, 4, 14, 14, 35, 43, 502000, tzinfo=<UTC>))
+[14/Apr/2016 15:35:43] WARNING [django.security.SuspiciousSession:108] Session data corrupted
+[14/Apr/2016 15:35:43] DEBUG [django.db.backends:89] (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'n8ldc660l8uz1c0pkcvprijiwbafi3hl' AND "django_session"."expire_date" > '2016-04-14T14:35:43.533000+00:00'::timestamptz); args=('n8ldc660l8uz1c0pkcvprijiwbafi3hl', datetime.datetime(2016, 4, 14, 14, 35, 43, 533000, tzinfo=<UTC>))
+[14/Apr/2016 15:35:43] WARNING [django.security.SuspiciousSession:108] Session data corrupted
+[14/Apr/2016 15:35:44] DEBUG [django.db.backends:89] (0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'n8ldc660l8uz1c0pkcvprijiwbafi3hl' AND "django_session"."expire_date" > '2016-04-14T14:35:44.894000+00:00'::timestamptz); args=('n8ldc660l8uz1c0pkcvprijiwbafi3hl', datetime.datetime(2016, 4, 14, 14, 35, 44, 894000, tzinfo=<UTC>))
+[14/Apr/2016 15:35:44] WARNING [django.security.SuspiciousSession:108] Session data corrupted
+[14/Apr/2016 15:35:44] DEBUG [django.db.backends:89] (0.002) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."username" = 'lambo477'; args=(u'lambo477',)
+[14/Apr/2016 15:35:44] DEBUG [django.db.backends:89] (0.001) SELECT (1) AS "a" FROM "django_session" WHERE "django_session"."session_key" = '1j92aguswk4p1c65w4inkp90b3glxdlr' LIMIT 1; args=(u'1j92aguswk4p1c65w4inkp90b3glxdlr',)
+[14/Apr/2016 15:35:44] DEBUG [django.db.backends:89] (0.000) INSERT INTO "django_session" ("session_key", "session_data", "expire_date") VALUES ('1j92aguswk4p1c65w4inkp90b3glxdlr', 'N2QwNjQ2M2QyYzllM2ViMjVjOTM2NmQ0NTYyMWYzZTgxYTdhMTEwNzp7fQ==', '2016-04-28T14:35:44.957000+00:00'::timestamptz); args=(u'1j92aguswk4p1c65w4inkp90b3glxdlr', u'N2QwNjQ2M2QyYzllM2ViMjVjOTM2NmQ0NTYyMWYzZTgxYTdhMTEwNzp7fQ==', datetime.datetime(2016, 4, 28, 14, 35, 44, 957000, tzinfo=<UTC>))
+[14/Apr/2016 15:35:44] DEBUG [django.db.backends:89] (0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE "django_session"."session_key" = 'n8ldc660l8uz1c0pkcvprijiwbafi3hl'; args=('n8ldc660l8uz1c0pkcvprijiwbafi3hl',)
+[14/Apr/2016 15:35:44] DEBUG [django.db.backends:89] (0.000) DELETE FROM "django_session" WHERE "django_session"."session_key" IN ('n8ldc660l8uz1c0pkcvprijiwbafi3hl'); args=(u'n8ldc660l8uz1c0pkcvprijiwbafi3hl',)
+[14/Apr/2016 15:35:44] DEBUG [django.db.backends:89] (0.000) UPDATE "auth_user" SET "last_login" = '2016-04-14T14:35:44.968000+00:00'::timestamptz WHERE "auth_user"."id" = 1; args=(datetime.datetime(2016, 4, 14, 14, 35, 44, 968000, tzinfo=<UTC>), 1)
+[14/Apr/2016 15:35:44] DEBUG [django.db.backends:89] (0.000) UPDATE "django_session" SET "session_data" = 'YTBlNjE5NzI2YzMwYTQxNDkxMjkzYmQ2MTRmOTY1NWU3YzNiZGI3MTp7Il9hdXRoX3VzZXJfaGFzaCI6IjE4NjE2NzQwYjkxNzgxZDczZTA3NDYxMTY4Y2Q2NTBjOTAxNGNkZTQiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=', "expire_date" = '2016-04-28T14:35:44.971000+00:00'::timestamptz WHERE "django_session"."session_key" = '1j92aguswk4p1c65w4inkp90b3glxdlr'; args=(u'YTBlNjE5NzI2YzMwYTQxNDkxMjkzYmQ2MTRmOTY1NWU3YzNiZGI3MTp7Il9hdXRoX3VzZXJfaGFzaCI6IjE4NjE2NzQwYjkxNzgxZDczZTA3NDYxMTY4Y2Q2NTBjOTAxNGNkZTQiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=', datetime.datetime(2016, 4, 28, 14, 35, 44, 971000, tzinfo=<UTC>), u'1j92aguswk4p1c65w4inkp90b3glxdlr')
+[14/Apr/2016 15:35:45] DEBUG [django.db.backends:89] (0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = '1j92aguswk4p1c65w4inkp90b3glxdlr' AND "django_session"."expire_date" > '2016-04-14T14:35:44.978000+00:00'::timestamptz); args=('1j92aguswk4p1c65w4inkp90b3glxdlr', datetime.datetime(2016, 4, 14, 14, 35, 44, 978000, tzinfo=<UTC>))
+[14/Apr/2016 15:35:45] DEBUG [django.db.backends:89] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[14/Apr/2016 15:35:45] DEBUG [django.db.backends:89] (0.002) SELECT "django_admin_log"."id", "django_admin_log"."action_time", "django_admin_log"."user_id", "django_admin_log"."content_type_id", "django_admin_log"."object_id", "django_admin_log"."object_repr", "django_admin_log"."action_flag", "django_admin_log"."change_message", "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined", "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_admin_log" INNER JOIN "auth_user" ON ( "django_admin_log"."user_id" = "auth_user"."id" ) LEFT OUTER JOIN "django_content_type" ON ( "django_admin_log"."content_type_id" = "django_content_type"."id" ) WHERE "django_admin_log"."user_id" = 1 ORDER BY "django_admin_log"."action_time" DESC LIMIT 10; args=(1,)
+[14/Apr/2016 15:39:42] DEBUG [django.db.backends:89] (0.003) 
+            SELECT c.relname, c.relkind
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid); args=None
+[14/Apr/2016 15:39:42] DEBUG [django.db.backends:89] (0.002) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+[14/Apr/2016 15:40:17] DEBUG [django.db.backends:89] (0.003) 
+            SELECT c.relname, c.relkind
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid); args=None
+[14/Apr/2016 15:40:17] DEBUG [django.db.backends:89] (0.001) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+[14/Apr/2016 15:40:40] DEBUG [django.db.backends:89] (0.002) 
+            SELECT c.relname, c.relkind
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid); args=None
+[14/Apr/2016 15:40:40] DEBUG [django.db.backends:89] (0.001) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+[14/Apr/2016 15:40:57] DEBUG [django.db.backends:89] (0.002) 
+            SELECT c.relname, c.relkind
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid); args=None
+[14/Apr/2016 15:40:57] DEBUG [django.db.backends:89] (0.001) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+[14/Apr/2016 15:40:59] DEBUG [django.db.backends:89] (0.003) 
+            SELECT c.relname, c.relkind
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid); args=None
+[14/Apr/2016 15:40:59] DEBUG [django.db.backends:89] (0.001) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+[14/Apr/2016 15:41:53] DEBUG [django.db.backends:89] (0.002) 
+            SELECT c.relname, c.relkind
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid); args=None
+[14/Apr/2016 15:41:53] DEBUG [django.db.backends:89] (0.001) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+[14/Apr/2016 15:42:12] DEBUG [django.db.backends:89] (0.004) 
+            SELECT c.relname, c.relkind
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid); args=None
+[14/Apr/2016 15:42:12] DEBUG [django.db.backends:89] (0.001) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+[14/Apr/2016 15:42:16] DEBUG [django.db.backends:89] (0.002) 
+            SELECT c.relname, c.relkind
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid); args=None
+[14/Apr/2016 15:42:16] DEBUG [django.db.backends:89] (0.001) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+[14/Apr/2016 15:42:20] DEBUG [django.db.backends:89] (0.003) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = '1j92aguswk4p1c65w4inkp90b3glxdlr' AND "django_session"."expire_date" > '2016-04-14T14:42:19.990000+00:00'::timestamptz); args=('1j92aguswk4p1c65w4inkp90b3glxdlr', datetime.datetime(2016, 4, 14, 14, 42, 19, 990000, tzinfo=<UTC>))
+[14/Apr/2016 15:42:20] DEBUG [django.db.backends:89] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[14/Apr/2016 15:42:20] DEBUG [django.db.backends:89] (0.002) SELECT "django_admin_log"."id", "django_admin_log"."action_time", "django_admin_log"."user_id", "django_admin_log"."content_type_id", "django_admin_log"."object_id", "django_admin_log"."object_repr", "django_admin_log"."action_flag", "django_admin_log"."change_message", "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined", "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_admin_log" INNER JOIN "auth_user" ON ( "django_admin_log"."user_id" = "auth_user"."id" ) LEFT OUTER JOIN "django_content_type" ON ( "django_admin_log"."content_type_id" = "django_content_type"."id" ) WHERE "django_admin_log"."user_id" = 1 ORDER BY "django_admin_log"."action_time" DESC LIMIT 10; args=(1,)
+[14/Apr/2016 15:42:22] DEBUG [django.db.backends:89] (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = '1j92aguswk4p1c65w4inkp90b3glxdlr' AND "django_session"."expire_date" > '2016-04-14T14:42:22.544000+00:00'::timestamptz); args=('1j92aguswk4p1c65w4inkp90b3glxdlr', datetime.datetime(2016, 4, 14, 14, 42, 22, 544000, tzinfo=<UTC>))
+[14/Apr/2016 15:42:22] DEBUG [django.db.backends:89] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[14/Apr/2016 15:42:22] DEBUG [django.db.backends:89] (0.008) SELECT COUNT(*) AS "__count" FROM "demo_data_category"; args=()
+[14/Apr/2016 15:42:22] DEBUG [django.db.backends:89] (0.000) SELECT "demo_data_category"."id", "demo_data_category"."num" FROM "demo_data_category" ORDER BY "demo_data_category"."id" DESC; args=()
+[14/Apr/2016 15:42:22] DEBUG [django.db.backends:89] (0.003) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = '1j92aguswk4p1c65w4inkp90b3glxdlr' AND "django_session"."expire_date" > '2016-04-14T14:42:22.710000+00:00'::timestamptz); args=('1j92aguswk4p1c65w4inkp90b3glxdlr', datetime.datetime(2016, 4, 14, 14, 42, 22, 710000, tzinfo=<UTC>))
+[14/Apr/2016 15:42:22] DEBUG [django.db.backends:89] (0.002) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[14/Apr/2016 15:42:24] DEBUG [django.db.backends:89] (0.003) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = '1j92aguswk4p1c65w4inkp90b3glxdlr' AND "django_session"."expire_date" > '2016-04-14T14:42:24.262000+00:00'::timestamptz); args=('1j92aguswk4p1c65w4inkp90b3glxdlr', datetime.datetime(2016, 4, 14, 14, 42, 24, 262000, tzinfo=<UTC>))
+[14/Apr/2016 15:42:24] DEBUG [django.db.backends:89] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[14/Apr/2016 15:42:24] DEBUG [django.db.backends:89] (0.004) SELECT "django_admin_log"."id", "django_admin_log"."action_time", "django_admin_log"."user_id", "django_admin_log"."content_type_id", "django_admin_log"."object_id", "django_admin_log"."object_repr", "django_admin_log"."action_flag", "django_admin_log"."change_message", "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined", "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_admin_log" INNER JOIN "auth_user" ON ( "django_admin_log"."user_id" = "auth_user"."id" ) LEFT OUTER JOIN "django_content_type" ON ( "django_admin_log"."content_type_id" = "django_content_type"."id" ) WHERE "django_admin_log"."user_id" = 1 ORDER BY "django_admin_log"."action_time" DESC LIMIT 10; args=(1,)
+[14/Apr/2016 15:42:25] DEBUG [django.db.backends:89] (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = '1j92aguswk4p1c65w4inkp90b3glxdlr' AND "django_session"."expire_date" > '2016-04-14T14:42:25.657000+00:00'::timestamptz); args=('1j92aguswk4p1c65w4inkp90b3glxdlr', datetime.datetime(2016, 4, 14, 14, 42, 25, 657000, tzinfo=<UTC>))
+[14/Apr/2016 15:42:25] DEBUG [django.db.backends:89] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[14/Apr/2016 15:42:25] DEBUG [django.db.backends:89] (0.001) SELECT COUNT(*) AS "__count" FROM "demo_data_review"; args=()
+[14/Apr/2016 15:42:25] DEBUG [django.db.backends:89] (0.002) SELECT "demo_data_review"."id", "demo_data_review"."num", "demo_data_review"."category_id", "demo_data_category"."id", "demo_data_category"."num" FROM "demo_data_review" INNER JOIN "demo_data_category" ON ( "demo_data_review"."category_id" = "demo_data_category"."id" ) ORDER BY "demo_data_review"."id" DESC; args=()
+[14/Apr/2016 15:42:25] DEBUG [django.db.backends:89] (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = '1j92aguswk4p1c65w4inkp90b3glxdlr' AND "django_session"."expire_date" > '2016-04-14T14:42:25.789000+00:00'::timestamptz); args=('1j92aguswk4p1c65w4inkp90b3glxdlr', datetime.datetime(2016, 4, 14, 14, 42, 25, 789000, tzinfo=<UTC>))
+[14/Apr/2016 15:42:25] DEBUG [django.db.backends:89] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[14/Apr/2016 15:43:14] DEBUG [django.db.backends:89] (0.003) 
+            SELECT c.relname, c.relkind
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid); args=None
+[14/Apr/2016 15:43:14] DEBUG [django.db.backends:89] (0.001) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+[14/Apr/2016 15:59:47] DEBUG [django.db.backends:89] (0.004) 
+            SELECT c.relname, c.relkind
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid); args=None
+[14/Apr/2016 15:59:47] DEBUG [django.db.backends:89] (0.001) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+[14/Apr/2016 16:00:17] ERROR [django.request:256] Internal Server Error: /
+Traceback (most recent call last):
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\handlers\base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\urlresolvers.py", line 365, in resolve
+    for pattern in self.url_patterns:
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\urlresolvers.py", line 401, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\urlresolvers.py", line 395, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Users\lambo477\AppData\Local\Enthought\Canopy\App\appdata\canopy-1.5.5.3123.win-x86_64\lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\Users\lambo477\Documents\ub_scrapes\urls.py", line 3, in <module>
+    from django.contirb.auth import login_required
+ImportError: No module named contirb.auth
+[14/Apr/2016 16:00:28] ERROR [django.request:256] Internal Server Error: /
+Traceback (most recent call last):
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\handlers\base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\urlresolvers.py", line 365, in resolve
+    for pattern in self.url_patterns:
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\urlresolvers.py", line 401, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\urlresolvers.py", line 395, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Users\lambo477\AppData\Local\Enthought\Canopy\App\appdata\canopy-1.5.5.3123.win-x86_64\lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\Users\lambo477\Documents\ub_scrapes\urls.py", line 3, in <module>
+    from django.contrib.auth import login_required
+ImportError: cannot import name login_required
+[14/Apr/2016 16:02:09] DEBUG [django.db.backends:89] (0.003) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = '1j92aguswk4p1c65w4inkp90b3glxdlr' AND "django_session"."expire_date" > '2016-04-14T15:02:09.158000+00:00'::timestamptz); args=('1j92aguswk4p1c65w4inkp90b3glxdlr', datetime.datetime(2016, 4, 14, 15, 2, 9, 158000, tzinfo=<UTC>))
+[14/Apr/2016 16:02:09] DEBUG [django.db.backends:89] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[14/Apr/2016 16:02:15] DEBUG [django.db.backends:89] (0.003) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = '1j92aguswk4p1c65w4inkp90b3glxdlr' AND "django_session"."expire_date" > '2016-04-14T15:02:15.244000+00:00'::timestamptz); args=('1j92aguswk4p1c65w4inkp90b3glxdlr', datetime.datetime(2016, 4, 14, 15, 2, 15, 244000, tzinfo=<UTC>))
+[14/Apr/2016 16:02:15] DEBUG [django.db.backends:89] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[14/Apr/2016 16:02:15] DEBUG [django.db.backends:89] (0.003) SELECT "django_admin_log"."id", "django_admin_log"."action_time", "django_admin_log"."user_id", "django_admin_log"."content_type_id", "django_admin_log"."object_id", "django_admin_log"."object_repr", "django_admin_log"."action_flag", "django_admin_log"."change_message", "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined", "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_admin_log" INNER JOIN "auth_user" ON ( "django_admin_log"."user_id" = "auth_user"."id" ) LEFT OUTER JOIN "django_content_type" ON ( "django_admin_log"."content_type_id" = "django_content_type"."id" ) WHERE "django_admin_log"."user_id" = 1 ORDER BY "django_admin_log"."action_time" DESC LIMIT 10; args=(1,)
+[14/Apr/2016 16:02:18] DEBUG [django.db.backends:89] (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = '1j92aguswk4p1c65w4inkp90b3glxdlr' AND "django_session"."expire_date" > '2016-04-14T15:02:18.735000+00:00'::timestamptz); args=('1j92aguswk4p1c65w4inkp90b3glxdlr', datetime.datetime(2016, 4, 14, 15, 2, 18, 735000, tzinfo=<UTC>))
+[14/Apr/2016 16:02:18] DEBUG [django.db.backends:89] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[14/Apr/2016 16:02:18] DEBUG [django.db.backends:89] (0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE "django_session"."session_key" = '1j92aguswk4p1c65w4inkp90b3glxdlr'; args=('1j92aguswk4p1c65w4inkp90b3glxdlr',)
+[14/Apr/2016 16:02:18] DEBUG [django.db.backends:89] (0.001) DELETE FROM "django_session" WHERE "django_session"."session_key" IN ('1j92aguswk4p1c65w4inkp90b3glxdlr'); args=(u'1j92aguswk4p1c65w4inkp90b3glxdlr',)
+[14/Apr/2016 16:02:23] WARNING [django.request:170] Not Found: /accounts/login/
+[14/Apr/2016 16:03:42] DEBUG [django.db.backends:89] (0.003) 
+            SELECT c.relname, c.relkind
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid); args=None
+[14/Apr/2016 16:03:42] DEBUG [django.db.backends:89] (0.001) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+[14/Apr/2016 16:03:44] WARNING [django.request:170] Not Found: /accounts/login/
+[14/Apr/2016 16:03:57] DEBUG [django.db.backends:89] (0.003) 
+            SELECT c.relname, c.relkind
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid); args=None
+[14/Apr/2016 16:03:57] DEBUG [django.db.backends:89] (0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+[14/Apr/2016 16:05:16] ERROR [django.request:256] Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\handlers\base.py", line 164, in get_response
+    response = response.render()
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\response.py", line 158, in render
+    self.content = self.rendered_content
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\response.py", line 133, in rendered_content
+    template = self._resolve_template(self.template_name)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\response.py", line 88, in _resolve_template
+    new_template = self.resolve_template(template)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\response.py", line 80, in resolve_template
+    return loader.get_template(template, using=self.using)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\loader.py", line 46, in get_template
+    raise TemplateDoesNotExist(template_name)
+TemplateDoesNotExist: registration/login.html
+[14/Apr/2016 16:09:48] DEBUG [django.db.backends:89] (0.002) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."username" = 'lambo477'; args=(u'lambo477',)
+[14/Apr/2016 16:09:48] DEBUG [django.db.backends:89] (0.001) SELECT (1) AS "a" FROM "django_session" WHERE "django_session"."session_key" = '7c0jt3tk822wnftookyjx67fivp390va' LIMIT 1; args=(u'7c0jt3tk822wnftookyjx67fivp390va',)
+[14/Apr/2016 16:09:48] DEBUG [django.db.backends:89] (0.000) INSERT INTO "django_session" ("session_key", "session_data", "expire_date") VALUES ('7c0jt3tk822wnftookyjx67fivp390va', 'N2QwNjQ2M2QyYzllM2ViMjVjOTM2NmQ0NTYyMWYzZTgxYTdhMTEwNzp7fQ==', '2016-04-28T15:09:48.037000+00:00'::timestamptz); args=(u'7c0jt3tk822wnftookyjx67fivp390va', u'N2QwNjQ2M2QyYzllM2ViMjVjOTM2NmQ0NTYyMWYzZTgxYTdhMTEwNzp7fQ==', datetime.datetime(2016, 4, 28, 15, 9, 48, 37000, tzinfo=<UTC>))
+[14/Apr/2016 16:09:48] DEBUG [django.db.backends:89] (0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE "django_session"."session_key" = '7c0jt3tk822wnftookyjx67fivp390va'; args=(u'7c0jt3tk822wnftookyjx67fivp390va',)
+[14/Apr/2016 16:09:48] DEBUG [django.db.backends:89] (0.001) DELETE FROM "django_session" WHERE "django_session"."session_key" IN ('7c0jt3tk822wnftookyjx67fivp390va'); args=(u'7c0jt3tk822wnftookyjx67fivp390va',)
+[14/Apr/2016 16:09:48] DEBUG [django.db.backends:89] (0.000) UPDATE "auth_user" SET "last_login" = '2016-04-14T15:09:48.045000+00:00'::timestamptz WHERE "auth_user"."id" = 1; args=(datetime.datetime(2016, 4, 14, 15, 9, 48, 45000, tzinfo=<UTC>), 1)
+[14/Apr/2016 16:09:48] DEBUG [django.db.backends:89] (0.000) UPDATE "django_session" SET "session_data" = 'YTBlNjE5NzI2YzMwYTQxNDkxMjkzYmQ2MTRmOTY1NWU3YzNiZGI3MTp7Il9hdXRoX3VzZXJfaGFzaCI6IjE4NjE2NzQwYjkxNzgxZDczZTA3NDYxMTY4Y2Q2NTBjOTAxNGNkZTQiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=', "expire_date" = '2016-04-28T15:09:48.047000+00:00'::timestamptz WHERE "django_session"."session_key" = '7c0jt3tk822wnftookyjx67fivp390va'; args=(u'YTBlNjE5NzI2YzMwYTQxNDkxMjkzYmQ2MTRmOTY1NWU3YzNiZGI3MTp7Il9hdXRoX3VzZXJfaGFzaCI6IjE4NjE2NzQwYjkxNzgxZDczZTA3NDYxMTY4Y2Q2NTBjOTAxNGNkZTQiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=', datetime.datetime(2016, 4, 28, 15, 9, 48, 47000, tzinfo=<UTC>), u'7c0jt3tk822wnftookyjx67fivp390va')
+[14/Apr/2016 16:09:48] DEBUG [django.db.backends:89] (0.000) INSERT INTO "django_session" ("session_key", "session_data", "expire_date") VALUES ('7c0jt3tk822wnftookyjx67fivp390va', 'YTBlNjE5NzI2YzMwYTQxNDkxMjkzYmQ2MTRmOTY1NWU3YzNiZGI3MTp7Il9hdXRoX3VzZXJfaGFzaCI6IjE4NjE2NzQwYjkxNzgxZDczZTA3NDYxMTY4Y2Q2NTBjOTAxNGNkZTQiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=', '2016-04-28T15:09:48.047000+00:00'::timestamptz); args=(u'7c0jt3tk822wnftookyjx67fivp390va', u'YTBlNjE5NzI2YzMwYTQxNDkxMjkzYmQ2MTRmOTY1NWU3YzNiZGI3MTp7Il9hdXRoX3VzZXJfaGFzaCI6IjE4NjE2NzQwYjkxNzgxZDczZTA3NDYxMTY4Y2Q2NTBjOTAxNGNkZTQiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=', datetime.datetime(2016, 4, 28, 15, 9, 48, 47000, tzinfo=<UTC>))
+[14/Apr/2016 16:09:48] DEBUG [django.db.backends:89] (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = '7c0jt3tk822wnftookyjx67fivp390va' AND "django_session"."expire_date" > '2016-04-14T15:09:48.053000+00:00'::timestamptz); args=('7c0jt3tk822wnftookyjx67fivp390va', datetime.datetime(2016, 4, 14, 15, 9, 48, 53000, tzinfo=<UTC>))
+[14/Apr/2016 16:09:48] DEBUG [django.db.backends:89] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[14/Apr/2016 16:09:55] DEBUG [django.db.backends:89] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."username" = 'lambo477'; args=(u'lambo477',)
+[14/Apr/2016 16:09:55] DEBUG [django.db.backends:89] (0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = '7c0jt3tk822wnftookyjx67fivp390va' AND "django_session"."expire_date" > '2016-04-14T15:09:55.299000+00:00'::timestamptz); args=('7c0jt3tk822wnftookyjx67fivp390va', datetime.datetime(2016, 4, 14, 15, 9, 55, 299000, tzinfo=<UTC>))
+[14/Apr/2016 16:09:55] DEBUG [django.db.backends:89] (0.002) UPDATE "auth_user" SET "last_login" = '2016-04-14T15:09:55.300000+00:00'::timestamptz WHERE "auth_user"."id" = 1; args=(datetime.datetime(2016, 4, 14, 15, 9, 55, 300000, tzinfo=<UTC>), 1)
+[14/Apr/2016 16:09:55] DEBUG [django.db.backends:89] (0.000) UPDATE "django_session" SET "session_data" = 'YTI4Y2EwMDgxYWYzOGZmMjE0YmJmNGY5ZmNjNGNmYmQ5NGFmZjM4ZTp7Il9hdXRoX3VzZXJfaGFzaCI6IjE4NjE2NzQwYjkxNzgxZDczZTA3NDYxMTY4Y2Q2NTBjOTAxNGNkZTQiLCJfYXV0aF91c2VyX2lkIjoiMSIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIn0=', "expire_date" = '2016-04-28T15:09:55.302000+00:00'::timestamptz WHERE "django_session"."session_key" = '7c0jt3tk822wnftookyjx67fivp390va'; args=(u'YTI4Y2EwMDgxYWYzOGZmMjE0YmJmNGY5ZmNjNGNmYmQ5NGFmZjM4ZTp7Il9hdXRoX3VzZXJfaGFzaCI6IjE4NjE2NzQwYjkxNzgxZDczZTA3NDYxMTY4Y2Q2NTBjOTAxNGNkZTQiLCJfYXV0aF91c2VyX2lkIjoiMSIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIn0=', datetime.datetime(2016, 4, 28, 15, 9, 55, 302000, tzinfo=<UTC>), '7c0jt3tk822wnftookyjx67fivp390va')
+[14/Apr/2016 16:09:55] DEBUG [django.db.backends:89] (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = '7c0jt3tk822wnftookyjx67fivp390va' AND "django_session"."expire_date" > '2016-04-14T15:09:55.310000+00:00'::timestamptz); args=('7c0jt3tk822wnftookyjx67fivp390va', datetime.datetime(2016, 4, 14, 15, 9, 55, 310000, tzinfo=<UTC>))
+[14/Apr/2016 16:09:55] DEBUG [django.db.backends:89] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[14/Apr/2016 16:09:56] DEBUG [django.db.backends:89] (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = '7c0jt3tk822wnftookyjx67fivp390va' AND "django_session"."expire_date" > '2016-04-14T15:09:56.842000+00:00'::timestamptz); args=('7c0jt3tk822wnftookyjx67fivp390va', datetime.datetime(2016, 4, 14, 15, 9, 56, 842000, tzinfo=<UTC>))
+[14/Apr/2016 16:09:56] DEBUG [django.db.backends:89] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[14/Apr/2016 16:09:58] DEBUG [django.db.backends:89] (0.003) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = '7c0jt3tk822wnftookyjx67fivp390va' AND "django_session"."expire_date" > '2016-04-14T15:09:58.241000+00:00'::timestamptz); args=('7c0jt3tk822wnftookyjx67fivp390va', datetime.datetime(2016, 4, 14, 15, 9, 58, 241000, tzinfo=<UTC>))
+[14/Apr/2016 16:09:58] DEBUG [django.db.backends:89] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[14/Apr/2016 16:11:29] DEBUG [django.db.backends:89] (0.003) 
+            SELECT c.relname, c.relkind
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid); args=None
+[14/Apr/2016 16:11:29] DEBUG [django.db.backends:89] (0.002) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+[14/Apr/2016 16:11:51] DEBUG [django.db.backends:89] (0.002) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."username" = 'lambo477'; args=(u'lambo477',)
+[14/Apr/2016 16:11:51] DEBUG [django.db.backends:89] (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = '7c0jt3tk822wnftookyjx67fivp390va' AND "django_session"."expire_date" > '2016-04-14T15:11:51.785000+00:00'::timestamptz); args=('7c0jt3tk822wnftookyjx67fivp390va', datetime.datetime(2016, 4, 14, 15, 11, 51, 785000, tzinfo=<UTC>))
+[14/Apr/2016 16:11:51] DEBUG [django.db.backends:89] (0.001) UPDATE "auth_user" SET "last_login" = '2016-04-14T15:11:51.787000+00:00'::timestamptz WHERE "auth_user"."id" = 1; args=(datetime.datetime(2016, 4, 14, 15, 11, 51, 787000, tzinfo=<UTC>), 1)
+[14/Apr/2016 16:11:51] DEBUG [django.db.backends:89] (0.001) UPDATE "django_session" SET "session_data" = 'YTBlNjE5NzI2YzMwYTQxNDkxMjkzYmQ2MTRmOTY1NWU3YzNiZGI3MTp7Il9hdXRoX3VzZXJfaGFzaCI6IjE4NjE2NzQwYjkxNzgxZDczZTA3NDYxMTY4Y2Q2NTBjOTAxNGNkZTQiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=', "expire_date" = '2016-04-28T15:11:51.793000+00:00'::timestamptz WHERE "django_session"."session_key" = '7c0jt3tk822wnftookyjx67fivp390va'; args=(u'YTBlNjE5NzI2YzMwYTQxNDkxMjkzYmQ2MTRmOTY1NWU3YzNiZGI3MTp7Il9hdXRoX3VzZXJfaGFzaCI6IjE4NjE2NzQwYjkxNzgxZDczZTA3NDYxMTY4Y2Q2NTBjOTAxNGNkZTQiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=', datetime.datetime(2016, 4, 28, 15, 11, 51, 793000, tzinfo=<UTC>), '7c0jt3tk822wnftookyjx67fivp390va')
+[14/Apr/2016 16:11:51] DEBUG [django.db.backends:89] (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = '7c0jt3tk822wnftookyjx67fivp390va' AND "django_session"."expire_date" > '2016-04-14T15:11:51.799000+00:00'::timestamptz); args=('7c0jt3tk822wnftookyjx67fivp390va', datetime.datetime(2016, 4, 14, 15, 11, 51, 799000, tzinfo=<UTC>))
+[14/Apr/2016 16:11:51] DEBUG [django.db.backends:89] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[14/Apr/2016 16:11:54] DEBUG [django.db.backends:89] (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = '7c0jt3tk822wnftookyjx67fivp390va' AND "django_session"."expire_date" > '2016-04-14T15:11:54.856000+00:00'::timestamptz); args=('7c0jt3tk822wnftookyjx67fivp390va', datetime.datetime(2016, 4, 14, 15, 11, 54, 856000, tzinfo=<UTC>))
+[14/Apr/2016 16:11:54] DEBUG [django.db.backends:89] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[14/Apr/2016 16:11:54] DEBUG [django.db.backends:89] (0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE "django_session"."session_key" = '7c0jt3tk822wnftookyjx67fivp390va'; args=('7c0jt3tk822wnftookyjx67fivp390va',)
+[14/Apr/2016 16:11:54] DEBUG [django.db.backends:89] (0.000) DELETE FROM "django_session" WHERE "django_session"."session_key" IN ('7c0jt3tk822wnftookyjx67fivp390va'); args=(u'7c0jt3tk822wnftookyjx67fivp390va',)
+[14/Apr/2016 16:14:03] DEBUG [django.db.backends:89] (0.004) 
+            SELECT c.relname, c.relkind
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid); args=None
+[14/Apr/2016 16:14:03] DEBUG [django.db.backends:89] (0.001) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+[14/Apr/2016 16:30:17] ERROR [django.request:256] Internal Server Error: /demo-data
+Traceback (most recent call last):
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\handlers\base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\middleware\common.py", line 75, in process_request
+    urlresolvers.is_valid_path("%s/" % request.path_info, urlconf)):
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\urlresolvers.py", line 646, in is_valid_path
+    resolve(path, urlconf)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\urlresolvers.py", line 521, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\urlresolvers.py", line 367, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\urlresolvers.py", line 367, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\urlresolvers.py", line 237, in resolve
+    kwargs.update(self.default_args)
+ValueError: dictionary update sequence element #0 has length 1; 2 is required
+[14/Apr/2016 16:30:52] ERROR [django.request:256] Internal Server Error: /demo-data
+Traceback (most recent call last):
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\handlers\base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\middleware\common.py", line 75, in process_request
+    urlresolvers.is_valid_path("%s/" % request.path_info, urlconf)):
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\urlresolvers.py", line 646, in is_valid_path
+    resolve(path, urlconf)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\urlresolvers.py", line 521, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\urlresolvers.py", line 367, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\urlresolvers.py", line 367, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\urlresolvers.py", line 237, in resolve
+    kwargs.update(self.default_args)
+ValueError: dictionary update sequence element #0 has length 1; 2 is required
+[14/Apr/2016 16:31:09] DEBUG [django.db.backends:89] (0.012) 
+            SELECT c.relname, c.relkind
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid); args=None
+[14/Apr/2016 16:31:09] DEBUG [django.db.backends:89] (0.001) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+[14/Apr/2016 16:31:22] ERROR [django.request:256] Internal Server Error: /demo-data
+Traceback (most recent call last):
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\handlers\base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\middleware\common.py", line 75, in process_request
+    urlresolvers.is_valid_path("%s/" % request.path_info, urlconf)):
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\urlresolvers.py", line 646, in is_valid_path
+    resolve(path, urlconf)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\urlresolvers.py", line 521, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\urlresolvers.py", line 367, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\urlresolvers.py", line 367, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\urlresolvers.py", line 237, in resolve
+    kwargs.update(self.default_args)
+ValueError: dictionary update sequence element #0 has length 1; 2 is required
+[14/Apr/2016 16:31:23] ERROR [django.request:256] Internal Server Error: /demo-data
+Traceback (most recent call last):
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\handlers\base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\middleware\common.py", line 75, in process_request
+    urlresolvers.is_valid_path("%s/" % request.path_info, urlconf)):
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\urlresolvers.py", line 646, in is_valid_path
+    resolve(path, urlconf)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\urlresolvers.py", line 521, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\urlresolvers.py", line 367, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\urlresolvers.py", line 367, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\urlresolvers.py", line 237, in resolve
+    kwargs.update(self.default_args)
+ValueError: dictionary update sequence element #0 has length 1; 2 is required
+[14/Apr/2016 16:31:33] ERROR [django.request:256] Internal Server Error: /demo-data/
+Traceback (most recent call last):
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\handlers\base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\urlresolvers.py", line 367, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\urlresolvers.py", line 367, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\urlresolvers.py", line 237, in resolve
+    kwargs.update(self.default_args)
+ValueError: dictionary update sequence element #0 has length 1; 2 is required
+[14/Apr/2016 16:32:16] DEBUG [django.db.backends:89] (0.003) 
+            SELECT c.relname, c.relkind
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid); args=None
+[14/Apr/2016 16:32:16] DEBUG [django.db.backends:89] (0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+[14/Apr/2016 16:32:24] DEBUG [django.db.backends:89] (0.002) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."username" = 'lambo477'; args=(u'lambo477',)
+[14/Apr/2016 16:32:24] DEBUG [django.db.backends:89] (0.001) SELECT (1) AS "a" FROM "django_session" WHERE "django_session"."session_key" = 'bawajm5vphv9i1s8m7yf46wkqm44opjl' LIMIT 1; args=(u'bawajm5vphv9i1s8m7yf46wkqm44opjl',)
+[14/Apr/2016 16:32:24] DEBUG [django.db.backends:89] (0.001) INSERT INTO "django_session" ("session_key", "session_data", "expire_date") VALUES ('bawajm5vphv9i1s8m7yf46wkqm44opjl', 'N2QwNjQ2M2QyYzllM2ViMjVjOTM2NmQ0NTYyMWYzZTgxYTdhMTEwNzp7fQ==', '2016-04-28T15:32:24.789000+00:00'::timestamptz); args=(u'bawajm5vphv9i1s8m7yf46wkqm44opjl', u'N2QwNjQ2M2QyYzllM2ViMjVjOTM2NmQ0NTYyMWYzZTgxYTdhMTEwNzp7fQ==', datetime.datetime(2016, 4, 28, 15, 32, 24, 789000, tzinfo=<UTC>))
+[14/Apr/2016 16:32:24] DEBUG [django.db.backends:89] (0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE "django_session"."session_key" = 'bawajm5vphv9i1s8m7yf46wkqm44opjl'; args=(u'bawajm5vphv9i1s8m7yf46wkqm44opjl',)
+[14/Apr/2016 16:32:24] DEBUG [django.db.backends:89] (0.000) DELETE FROM "django_session" WHERE "django_session"."session_key" IN ('bawajm5vphv9i1s8m7yf46wkqm44opjl'); args=(u'bawajm5vphv9i1s8m7yf46wkqm44opjl',)
+[14/Apr/2016 16:32:24] DEBUG [django.db.backends:89] (0.000) UPDATE "auth_user" SET "last_login" = '2016-04-14T15:32:24.797000+00:00'::timestamptz WHERE "auth_user"."id" = 1; args=(datetime.datetime(2016, 4, 14, 15, 32, 24, 797000, tzinfo=<UTC>), 1)
+[14/Apr/2016 16:32:24] DEBUG [django.db.backends:89] (0.000) UPDATE "django_session" SET "session_data" = 'YTBlNjE5NzI2YzMwYTQxNDkxMjkzYmQ2MTRmOTY1NWU3YzNiZGI3MTp7Il9hdXRoX3VzZXJfaGFzaCI6IjE4NjE2NzQwYjkxNzgxZDczZTA3NDYxMTY4Y2Q2NTBjOTAxNGNkZTQiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=', "expire_date" = '2016-04-28T15:32:24.799000+00:00'::timestamptz WHERE "django_session"."session_key" = 'bawajm5vphv9i1s8m7yf46wkqm44opjl'; args=(u'YTBlNjE5NzI2YzMwYTQxNDkxMjkzYmQ2MTRmOTY1NWU3YzNiZGI3MTp7Il9hdXRoX3VzZXJfaGFzaCI6IjE4NjE2NzQwYjkxNzgxZDczZTA3NDYxMTY4Y2Q2NTBjOTAxNGNkZTQiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=', datetime.datetime(2016, 4, 28, 15, 32, 24, 799000, tzinfo=<UTC>), u'bawajm5vphv9i1s8m7yf46wkqm44opjl')
+[14/Apr/2016 16:32:24] DEBUG [django.db.backends:89] (0.001) INSERT INTO "django_session" ("session_key", "session_data", "expire_date") VALUES ('bawajm5vphv9i1s8m7yf46wkqm44opjl', 'YTBlNjE5NzI2YzMwYTQxNDkxMjkzYmQ2MTRmOTY1NWU3YzNiZGI3MTp7Il9hdXRoX3VzZXJfaGFzaCI6IjE4NjE2NzQwYjkxNzgxZDczZTA3NDYxMTY4Y2Q2NTBjOTAxNGNkZTQiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=', '2016-04-28T15:32:24.799000+00:00'::timestamptz); args=(u'bawajm5vphv9i1s8m7yf46wkqm44opjl', u'YTBlNjE5NzI2YzMwYTQxNDkxMjkzYmQ2MTRmOTY1NWU3YzNiZGI3MTp7Il9hdXRoX3VzZXJfaGFzaCI6IjE4NjE2NzQwYjkxNzgxZDczZTA3NDYxMTY4Y2Q2NTBjOTAxNGNkZTQiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=', datetime.datetime(2016, 4, 28, 15, 32, 24, 799000, tzinfo=<UTC>))
+[14/Apr/2016 16:32:24] DEBUG [django.db.backends:89] (0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'bawajm5vphv9i1s8m7yf46wkqm44opjl' AND "django_session"."expire_date" > '2016-04-14T15:32:24.806000+00:00'::timestamptz); args=('bawajm5vphv9i1s8m7yf46wkqm44opjl', datetime.datetime(2016, 4, 14, 15, 32, 24, 806000, tzinfo=<UTC>))
+[14/Apr/2016 16:32:24] DEBUG [django.db.backends:89] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[14/Apr/2016 16:32:31] DEBUG [django.db.backends:89] (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'bawajm5vphv9i1s8m7yf46wkqm44opjl' AND "django_session"."expire_date" > '2016-04-14T15:32:31.450000+00:00'::timestamptz); args=('bawajm5vphv9i1s8m7yf46wkqm44opjl', datetime.datetime(2016, 4, 14, 15, 32, 31, 450000, tzinfo=<UTC>))
+[14/Apr/2016 16:32:31] DEBUG [django.db.backends:89] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[14/Apr/2016 16:32:31] DEBUG [django.db.backends:89] (0.000) SELECT "demo_data_category"."id", "demo_data_category"."num" FROM "demo_data_category"; args=()
+[14/Apr/2016 16:33:07] DEBUG [django.db.backends:89] (0.004) 
+            SELECT c.relname, c.relkind
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid); args=None
+[14/Apr/2016 16:33:07] DEBUG [django.db.backends:89] (0.001) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+[14/Apr/2016 16:33:26] DEBUG [django.db.backends:89] (0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'bawajm5vphv9i1s8m7yf46wkqm44opjl' AND "django_session"."expire_date" > '2016-04-14T15:33:26.926000+00:00'::timestamptz); args=('bawajm5vphv9i1s8m7yf46wkqm44opjl', datetime.datetime(2016, 4, 14, 15, 33, 26, 926000, tzinfo=<UTC>))
+[14/Apr/2016 16:33:26] DEBUG [django.db.backends:89] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[14/Apr/2016 16:33:26] DEBUG [django.db.backends:89] (0.001) SELECT "demo_data_category"."id", "demo_data_category"."num" FROM "demo_data_category"; args=()
+[14/Apr/2016 16:33:44] DEBUG [django.db.backends:89] (0.003) 
+            SELECT c.relname, c.relkind
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid); args=None
+[14/Apr/2016 16:33:44] DEBUG [django.db.backends:89] (0.001) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+[14/Apr/2016 16:35:52] DEBUG [django.db.backends:89] (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'bawajm5vphv9i1s8m7yf46wkqm44opjl' AND "django_session"."expire_date" > '2016-04-14T15:35:52.729000+00:00'::timestamptz); args=('bawajm5vphv9i1s8m7yf46wkqm44opjl', datetime.datetime(2016, 4, 14, 15, 35, 52, 729000, tzinfo=<UTC>))
+[14/Apr/2016 16:35:52] DEBUG [django.db.backends:89] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[14/Apr/2016 16:35:52] DEBUG [django.db.backends:89] (0.001) SELECT "demo_data_category"."id", "demo_data_category"."num" FROM "demo_data_category"; args=()
+[14/Apr/2016 16:36:15] DEBUG [django.db.backends:89] (0.004) 
+            SELECT c.relname, c.relkind
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid); args=None
+[14/Apr/2016 16:36:15] DEBUG [django.db.backends:89] (0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+[14/Apr/2016 16:40:20] ERROR [django.request:256] Internal Server Error: /demo-data/
+Traceback (most recent call last):
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\handlers\base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\urlresolvers.py", line 365, in resolve
+    for pattern in self.url_patterns:
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\urlresolvers.py", line 401, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\urlresolvers.py", line 395, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Users\lambo477\AppData\Local\Enthought\Canopy\App\appdata\canopy-1.5.5.3123.win-x86_64\lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\Users\lambo477\Documents\ub_scrapes\urls.py", line 8, in <module>
+    import demo_data.urls as demo_data_urls
+  File "C:\Users\lambo477\Documents\ub_scrapes\demo_data\urls.py", line 10, in <module>
+    login_required(demo_data_views.category_page),
+AttributeError: 'module' object has no attribute 'category_page'
+[14/Apr/2016 16:40:34] DEBUG [django.db.backends:89] (0.003) 
+            SELECT c.relname, c.relkind
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid); args=None
+[14/Apr/2016 16:40:34] DEBUG [django.db.backends:89] (0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+[14/Apr/2016 16:40:34] DEBUG [django.db.backends:89] (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'bawajm5vphv9i1s8m7yf46wkqm44opjl' AND "django_session"."expire_date" > '2016-04-14T15:40:34.882000+00:00'::timestamptz); args=('bawajm5vphv9i1s8m7yf46wkqm44opjl', datetime.datetime(2016, 4, 14, 15, 40, 34, 882000, tzinfo=<UTC>))
+[14/Apr/2016 16:40:34] DEBUG [django.db.backends:89] (0.002) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[14/Apr/2016 16:40:34] DEBUG [django.db.backends:89] (0.000) SELECT "demo_data_category"."id", "demo_data_category"."num" FROM "demo_data_category"; args=()
+[14/Apr/2016 16:40:34] DEBUG [django.db.backends:89] (0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'bawajm5vphv9i1s8m7yf46wkqm44opjl' AND "django_session"."expire_date" > '2016-04-14T15:40:34.953000+00:00'::timestamptz); args=('bawajm5vphv9i1s8m7yf46wkqm44opjl', datetime.datetime(2016, 4, 14, 15, 40, 34, 953000, tzinfo=<UTC>))
+[14/Apr/2016 16:40:34] DEBUG [django.db.backends:89] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[14/Apr/2016 16:40:34] DEBUG [django.db.backends:89] (0.001) SELECT "demo_data_category"."id", "demo_data_category"."num" FROM "demo_data_category"; args=()
+[14/Apr/2016 16:40:42] DEBUG [django.db.backends:89] (0.003) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'bawajm5vphv9i1s8m7yf46wkqm44opjl' AND "django_session"."expire_date" > '2016-04-14T15:40:42.633000+00:00'::timestamptz); args=('bawajm5vphv9i1s8m7yf46wkqm44opjl', datetime.datetime(2016, 4, 14, 15, 40, 42, 633000, tzinfo=<UTC>))
+[14/Apr/2016 16:40:42] DEBUG [django.db.backends:89] (0.002) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[14/Apr/2016 16:40:42] DEBUG [django.db.backends:89] (0.001) SELECT "demo_data_category"."id", "demo_data_category"."num" FROM "demo_data_category"; args=()
+[14/Apr/2016 16:41:15] DEBUG [django.db.backends:89] (0.003) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'bawajm5vphv9i1s8m7yf46wkqm44opjl' AND "django_session"."expire_date" > '2016-04-14T15:41:15.375000+00:00'::timestamptz); args=('bawajm5vphv9i1s8m7yf46wkqm44opjl', datetime.datetime(2016, 4, 14, 15, 41, 15, 375000, tzinfo=<UTC>))
+[14/Apr/2016 16:41:15] DEBUG [django.db.backends:89] (0.002) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[14/Apr/2016 16:41:15] DEBUG [django.db.backends:89] (0.001) SELECT "demo_data_category"."id", "demo_data_category"."num" FROM "demo_data_category"; args=()
+[14/Apr/2016 16:42:03] DEBUG [django.db.backends:89] (0.003) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'bawajm5vphv9i1s8m7yf46wkqm44opjl' AND "django_session"."expire_date" > '2016-04-14T15:42:03.602000+00:00'::timestamptz); args=('bawajm5vphv9i1s8m7yf46wkqm44opjl', datetime.datetime(2016, 4, 14, 15, 42, 3, 602000, tzinfo=<UTC>))
+[14/Apr/2016 16:42:03] DEBUG [django.db.backends:89] (0.002) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[14/Apr/2016 16:42:03] DEBUG [django.db.backends:89] (0.001) SELECT "demo_data_category"."id", "demo_data_category"."num" FROM "demo_data_category"; args=()
+[14/Apr/2016 16:44:22] DEBUG [django.db.backends:89] (0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'bawajm5vphv9i1s8m7yf46wkqm44opjl' AND "django_session"."expire_date" > '2016-04-14T15:44:22.757000+00:00'::timestamptz); args=('bawajm5vphv9i1s8m7yf46wkqm44opjl', datetime.datetime(2016, 4, 14, 15, 44, 22, 757000, tzinfo=<UTC>))
+[14/Apr/2016 16:44:22] DEBUG [django.db.backends:89] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[14/Apr/2016 16:44:22] DEBUG [django.db.backends:89] (0.001) SELECT "demo_data_category"."id", "demo_data_category"."num" FROM "demo_data_category"; args=()
+[14/Apr/2016 16:44:25] DEBUG [django.db.backends:89] (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'bawajm5vphv9i1s8m7yf46wkqm44opjl' AND "django_session"."expire_date" > '2016-04-14T15:44:25.554000+00:00'::timestamptz); args=('bawajm5vphv9i1s8m7yf46wkqm44opjl', datetime.datetime(2016, 4, 14, 15, 44, 25, 554000, tzinfo=<UTC>))
+[14/Apr/2016 16:44:25] DEBUG [django.db.backends:89] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[14/Apr/2016 16:44:25] DEBUG [django.db.backends:89] (0.000) SELECT "demo_data_category"."id", "demo_data_category"."num" FROM "demo_data_category" WHERE "demo_data_category"."num" = 5; args=(5,)
+[14/Apr/2016 16:44:25] DEBUG [django.db.backends:89] (0.001) SELECT "demo_data_review"."id", "demo_data_review"."num", "demo_data_review"."category_id" FROM "demo_data_review" WHERE "demo_data_review"."category_id" = 5; args=(5,)
+[14/Apr/2016 16:44:25] ERROR [django.request:256] Internal Server Error: /demo-data/category-5/
+Traceback (most recent call last):
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\lambo477\Documents\ub_scrapes\demo_data\views.py", line 12, in category_page
+    reviews = Review.objects.get(category=category)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\db\models\query.py", line 338, in get
+    (self.model._meta.object_name, num)
+MultipleObjectsReturned: get() returned more than one Review -- it returned 10!
+[14/Apr/2016 16:44:25] DEBUG [django.db.backends:89] (0.000) SELECT "demo_data_review"."id", "demo_data_review"."num", "demo_data_review"."category_id" FROM "demo_data_review" LIMIT 21; args=()
+[14/Apr/2016 16:44:48] DEBUG [django.db.backends:89] (0.002) 
+            SELECT c.relname, c.relkind
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid); args=None
+[14/Apr/2016 16:44:48] DEBUG [django.db.backends:89] (0.001) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+[14/Apr/2016 16:44:49] DEBUG [django.db.backends:89] (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'bawajm5vphv9i1s8m7yf46wkqm44opjl' AND "django_session"."expire_date" > '2016-04-14T15:44:49.363000+00:00'::timestamptz); args=('bawajm5vphv9i1s8m7yf46wkqm44opjl', datetime.datetime(2016, 4, 14, 15, 44, 49, 363000, tzinfo=<UTC>))
+[14/Apr/2016 16:44:49] DEBUG [django.db.backends:89] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[14/Apr/2016 16:44:49] DEBUG [django.db.backends:89] (0.001) SELECT "demo_data_category"."id", "demo_data_category"."num" FROM "demo_data_category"; args=()
+[14/Apr/2016 16:44:51] DEBUG [django.db.backends:89] (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'bawajm5vphv9i1s8m7yf46wkqm44opjl' AND "django_session"."expire_date" > '2016-04-14T15:44:51.248000+00:00'::timestamptz); args=('bawajm5vphv9i1s8m7yf46wkqm44opjl', datetime.datetime(2016, 4, 14, 15, 44, 51, 248000, tzinfo=<UTC>))
+[14/Apr/2016 16:44:51] DEBUG [django.db.backends:89] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[14/Apr/2016 16:44:51] DEBUG [django.db.backends:89] (0.001) SELECT "demo_data_category"."id", "demo_data_category"."num" FROM "demo_data_category" WHERE "demo_data_category"."num" = 6; args=(6,)
+[14/Apr/2016 16:48:51] DEBUG [django.db.backends:89] (0.003) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'bawajm5vphv9i1s8m7yf46wkqm44opjl' AND "django_session"."expire_date" > '2016-04-14T15:48:51.716000+00:00'::timestamptz); args=('bawajm5vphv9i1s8m7yf46wkqm44opjl', datetime.datetime(2016, 4, 14, 15, 48, 51, 716000, tzinfo=<UTC>))
+[14/Apr/2016 16:48:51] DEBUG [django.db.backends:89] (0.002) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[14/Apr/2016 16:48:51] DEBUG [django.db.backends:89] (0.001) SELECT "demo_data_category"."id", "demo_data_category"."num" FROM "demo_data_category" WHERE "demo_data_category"."num" = 6; args=(6,)
+[14/Apr/2016 16:48:51] DEBUG [django.db.backends:89] (0.001) SELECT "demo_data_review"."id", "demo_data_review"."num", "demo_data_review"."category_id" FROM "demo_data_review" WHERE "demo_data_review"."category_id" = 6; args=(6,)
+[14/Apr/2016 16:57:44] DEBUG [django.db.backends:89] (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'bawajm5vphv9i1s8m7yf46wkqm44opjl' AND "django_session"."expire_date" > '2016-04-14T15:57:44.928000+00:00'::timestamptz); args=('bawajm5vphv9i1s8m7yf46wkqm44opjl', datetime.datetime(2016, 4, 14, 15, 57, 44, 928000, tzinfo=<UTC>))
+[14/Apr/2016 16:57:44] DEBUG [django.db.backends:89] (0.002) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[14/Apr/2016 16:57:44] DEBUG [django.db.backends:89] (0.001) SELECT "demo_data_category"."id", "demo_data_category"."num" FROM "demo_data_category" WHERE "demo_data_category"."num" = 6; args=(6,)
+[14/Apr/2016 16:57:44] DEBUG [django.db.backends:89] (0.001) SELECT "demo_data_review"."id", "demo_data_review"."num", "demo_data_review"."category_id" FROM "demo_data_review" WHERE "demo_data_review"."category_id" = 6; args=(6,)
+[14/Apr/2016 16:57:48] DEBUG [django.db.backends:89] (0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'bawajm5vphv9i1s8m7yf46wkqm44opjl' AND "django_session"."expire_date" > '2016-04-14T15:57:48.492000+00:00'::timestamptz); args=('bawajm5vphv9i1s8m7yf46wkqm44opjl', datetime.datetime(2016, 4, 14, 15, 57, 48, 492000, tzinfo=<UTC>))
+[14/Apr/2016 16:57:48] DEBUG [django.db.backends:89] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[14/Apr/2016 16:57:48] DEBUG [django.db.backends:89] (0.003) SELECT "django_admin_log"."id", "django_admin_log"."action_time", "django_admin_log"."user_id", "django_admin_log"."content_type_id", "django_admin_log"."object_id", "django_admin_log"."object_repr", "django_admin_log"."action_flag", "django_admin_log"."change_message", "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined", "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_admin_log" INNER JOIN "auth_user" ON ( "django_admin_log"."user_id" = "auth_user"."id" ) LEFT OUTER JOIN "django_content_type" ON ( "django_admin_log"."content_type_id" = "django_content_type"."id" ) WHERE "django_admin_log"."user_id" = 1 ORDER BY "django_admin_log"."action_time" DESC LIMIT 10; args=(1,)
+[14/Apr/2016 16:57:54] DEBUG [django.db.backends:89] (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'bawajm5vphv9i1s8m7yf46wkqm44opjl' AND "django_session"."expire_date" > '2016-04-14T15:57:54.353000+00:00'::timestamptz); args=('bawajm5vphv9i1s8m7yf46wkqm44opjl', datetime.datetime(2016, 4, 14, 15, 57, 54, 353000, tzinfo=<UTC>))
+[14/Apr/2016 16:57:54] DEBUG [django.db.backends:89] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[14/Apr/2016 16:57:54] DEBUG [django.db.backends:89] (0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE "django_session"."session_key" = 'bawajm5vphv9i1s8m7yf46wkqm44opjl'; args=('bawajm5vphv9i1s8m7yf46wkqm44opjl',)
+[14/Apr/2016 16:57:54] DEBUG [django.db.backends:89] (0.001) DELETE FROM "django_session" WHERE "django_session"."session_key" IN ('bawajm5vphv9i1s8m7yf46wkqm44opjl'); args=(u'bawajm5vphv9i1s8m7yf46wkqm44opjl',)
+[14/Apr/2016 16:58:02] DEBUG [django.db.backends:89] (0.002) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."username" = 'lambo477'; args=(u'lambo477',)
+[14/Apr/2016 16:58:02] DEBUG [django.db.backends:89] (0.001) SELECT (1) AS "a" FROM "django_session" WHERE "django_session"."session_key" = '6u674cknbgc9tavti1g49uks9bpcx2gw' LIMIT 1; args=(u'6u674cknbgc9tavti1g49uks9bpcx2gw',)
+[14/Apr/2016 16:58:02] DEBUG [django.db.backends:89] (0.000) INSERT INTO "django_session" ("session_key", "session_data", "expire_date") VALUES ('6u674cknbgc9tavti1g49uks9bpcx2gw', 'N2QwNjQ2M2QyYzllM2ViMjVjOTM2NmQ0NTYyMWYzZTgxYTdhMTEwNzp7fQ==', '2016-04-28T15:58:02.906000+00:00'::timestamptz); args=(u'6u674cknbgc9tavti1g49uks9bpcx2gw', u'N2QwNjQ2M2QyYzllM2ViMjVjOTM2NmQ0NTYyMWYzZTgxYTdhMTEwNzp7fQ==', datetime.datetime(2016, 4, 28, 15, 58, 2, 906000, tzinfo=<UTC>))
+[14/Apr/2016 16:58:02] DEBUG [django.db.backends:89] (0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE "django_session"."session_key" = '6u674cknbgc9tavti1g49uks9bpcx2gw'; args=(u'6u674cknbgc9tavti1g49uks9bpcx2gw',)
+[14/Apr/2016 16:58:02] DEBUG [django.db.backends:89] (0.001) DELETE FROM "django_session" WHERE "django_session"."session_key" IN ('6u674cknbgc9tavti1g49uks9bpcx2gw'); args=(u'6u674cknbgc9tavti1g49uks9bpcx2gw',)
+[14/Apr/2016 16:58:02] DEBUG [django.db.backends:89] (0.000) UPDATE "auth_user" SET "last_login" = '2016-04-14T15:58:02.910000+00:00'::timestamptz WHERE "auth_user"."id" = 1; args=(datetime.datetime(2016, 4, 14, 15, 58, 2, 910000, tzinfo=<UTC>), 1)
+[14/Apr/2016 16:58:02] DEBUG [django.db.backends:89] (0.001) UPDATE "django_session" SET "session_data" = 'YTBlNjE5NzI2YzMwYTQxNDkxMjkzYmQ2MTRmOTY1NWU3YzNiZGI3MTp7Il9hdXRoX3VzZXJfaGFzaCI6IjE4NjE2NzQwYjkxNzgxZDczZTA3NDYxMTY4Y2Q2NTBjOTAxNGNkZTQiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=', "expire_date" = '2016-04-28T15:58:02.912000+00:00'::timestamptz WHERE "django_session"."session_key" = '6u674cknbgc9tavti1g49uks9bpcx2gw'; args=(u'YTBlNjE5NzI2YzMwYTQxNDkxMjkzYmQ2MTRmOTY1NWU3YzNiZGI3MTp7Il9hdXRoX3VzZXJfaGFzaCI6IjE4NjE2NzQwYjkxNzgxZDczZTA3NDYxMTY4Y2Q2NTBjOTAxNGNkZTQiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=', datetime.datetime(2016, 4, 28, 15, 58, 2, 912000, tzinfo=<UTC>), u'6u674cknbgc9tavti1g49uks9bpcx2gw')
+[14/Apr/2016 16:58:02] DEBUG [django.db.backends:89] (0.000) INSERT INTO "django_session" ("session_key", "session_data", "expire_date") VALUES ('6u674cknbgc9tavti1g49uks9bpcx2gw', 'YTBlNjE5NzI2YzMwYTQxNDkxMjkzYmQ2MTRmOTY1NWU3YzNiZGI3MTp7Il9hdXRoX3VzZXJfaGFzaCI6IjE4NjE2NzQwYjkxNzgxZDczZTA3NDYxMTY4Y2Q2NTBjOTAxNGNkZTQiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=', '2016-04-28T15:58:02.912000+00:00'::timestamptz); args=(u'6u674cknbgc9tavti1g49uks9bpcx2gw', u'YTBlNjE5NzI2YzMwYTQxNDkxMjkzYmQ2MTRmOTY1NWU3YzNiZGI3MTp7Il9hdXRoX3VzZXJfaGFzaCI6IjE4NjE2NzQwYjkxNzgxZDczZTA3NDYxMTY4Y2Q2NTBjOTAxNGNkZTQiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=', datetime.datetime(2016, 4, 28, 15, 58, 2, 912000, tzinfo=<UTC>))
+[14/Apr/2016 16:58:02] DEBUG [django.db.backends:89] (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = '6u674cknbgc9tavti1g49uks9bpcx2gw' AND "django_session"."expire_date" > '2016-04-14T15:58:02.919000+00:00'::timestamptz); args=('6u674cknbgc9tavti1g49uks9bpcx2gw', datetime.datetime(2016, 4, 14, 15, 58, 2, 919000, tzinfo=<UTC>))
+[14/Apr/2016 16:58:02] DEBUG [django.db.backends:89] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[14/Apr/2016 16:58:02] DEBUG [django.db.backends:89] (0.000) SELECT "demo_data_category"."id", "demo_data_category"."num" FROM "demo_data_category"; args=()
+[14/Apr/2016 16:58:04] DEBUG [django.db.backends:89] (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = '6u674cknbgc9tavti1g49uks9bpcx2gw' AND "django_session"."expire_date" > '2016-04-14T15:58:04.087000+00:00'::timestamptz); args=('6u674cknbgc9tavti1g49uks9bpcx2gw', datetime.datetime(2016, 4, 14, 15, 58, 4, 87000, tzinfo=<UTC>))
+[14/Apr/2016 16:58:04] DEBUG [django.db.backends:89] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[14/Apr/2016 16:58:04] DEBUG [django.db.backends:89] (0.000) SELECT "demo_data_category"."id", "demo_data_category"."num" FROM "demo_data_category" WHERE "demo_data_category"."num" = 5; args=(5,)
+[14/Apr/2016 16:58:04] DEBUG [django.db.backends:89] (0.001) SELECT "demo_data_review"."id", "demo_data_review"."num", "demo_data_review"."category_id" FROM "demo_data_review" WHERE "demo_data_review"."category_id" = 5; args=(5,)
+[14/Apr/2016 16:59:19] DEBUG [django.db.backends:89] (0.003) 
+            SELECT c.relname, c.relkind
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid); args=None
+[14/Apr/2016 16:59:19] DEBUG [django.db.backends:89] (0.002) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+[14/Apr/2016 17:01:24] DEBUG [django.db.backends:89] (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = '6u674cknbgc9tavti1g49uks9bpcx2gw' AND "django_session"."expire_date" > '2016-04-14T16:01:24.316000+00:00'::timestamptz); args=('6u674cknbgc9tavti1g49uks9bpcx2gw', datetime.datetime(2016, 4, 14, 16, 1, 24, 316000, tzinfo=<UTC>))
+[14/Apr/2016 17:01:24] DEBUG [django.db.backends:89] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[14/Apr/2016 17:01:24] DEBUG [django.db.backends:89] (0.001) SELECT "demo_data_category"."id", "demo_data_category"."num" FROM "demo_data_category" WHERE "demo_data_category"."num" = 5; args=(5,)
+[14/Apr/2016 17:01:24] DEBUG [django.db.backends:89] (0.001) SELECT "demo_data_review"."id", "demo_data_review"."num", "demo_data_review"."category_id" FROM "demo_data_review" WHERE "demo_data_review"."category_id" = 5; args=(5,)
+[14/Apr/2016 17:02:03] DEBUG [django.db.backends:89] (0.003) 
+            SELECT c.relname, c.relkind
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid); args=None
+[14/Apr/2016 17:02:03] DEBUG [django.db.backends:89] (0.001) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+[14/Apr/2016 17:02:45] DEBUG [django.db.backends:89] (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = '6u674cknbgc9tavti1g49uks9bpcx2gw' AND "django_session"."expire_date" > '2016-04-14T16:02:45.322000+00:00'::timestamptz); args=('6u674cknbgc9tavti1g49uks9bpcx2gw', datetime.datetime(2016, 4, 14, 16, 2, 45, 322000, tzinfo=<UTC>))
+[14/Apr/2016 17:02:45] DEBUG [django.db.backends:89] (0.002) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[14/Apr/2016 17:02:45] DEBUG [django.db.backends:89] (0.000) SELECT "demo_data_category"."id", "demo_data_category"."num" FROM "demo_data_category" WHERE "demo_data_category"."num" = 5; args=(5,)
+[14/Apr/2016 17:02:45] DEBUG [django.db.backends:89] (0.001) SELECT "demo_data_review"."id", "demo_data_review"."num", "demo_data_review"."category_id" FROM "demo_data_review" WHERE "demo_data_review"."category_id" = 5; args=(5,)
+[14/Apr/2016 17:02:48] DEBUG [django.db.backends:89] (0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = '6u674cknbgc9tavti1g49uks9bpcx2gw' AND "django_session"."expire_date" > '2016-04-14T16:02:47.981000+00:00'::timestamptz); args=('6u674cknbgc9tavti1g49uks9bpcx2gw', datetime.datetime(2016, 4, 14, 16, 2, 47, 981000, tzinfo=<UTC>))
+[14/Apr/2016 17:02:48] DEBUG [django.db.backends:89] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[14/Apr/2016 17:02:48] DEBUG [django.db.backends:89] (0.001) SELECT "demo_data_review"."id", "demo_data_review"."num", "demo_data_review"."category_id" FROM "demo_data_review" WHERE "demo_data_review"."num" = 5; args=(5,)
+[14/Apr/2016 17:02:48] ERROR [django.request:256] Internal Server Error: /demo-data/review-5/
+Traceback (most recent call last):
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\lambo477\Documents\ub_scrapes\demo_data\views.py", line 19, in review_page
+    review = Review.objects.get(num=review_num)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\db\models\query.py", line 338, in get
+    (self.model._meta.object_name, num)
+MultipleObjectsReturned: get() returned more than one Review -- it returned 10!
+[14/Apr/2016 17:02:48] DEBUG [django.db.backends:89] (0.000) SELECT "demo_data_review"."id", "demo_data_review"."num", "demo_data_review"."category_id" FROM "demo_data_review" LIMIT 21; args=()
+[14/Apr/2016 17:03:00] DEBUG [django.db.backends:89] (0.002) 
+            SELECT c.relname, c.relkind
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid); args=None
+[14/Apr/2016 17:03:00] DEBUG [django.db.backends:89] (0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+[14/Apr/2016 17:03:45] DEBUG [django.db.backends:89] (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = '6u674cknbgc9tavti1g49uks9bpcx2gw' AND "django_session"."expire_date" > '2016-04-14T16:03:45.284000+00:00'::timestamptz); args=('6u674cknbgc9tavti1g49uks9bpcx2gw', datetime.datetime(2016, 4, 14, 16, 3, 45, 284000, tzinfo=<UTC>))
+[14/Apr/2016 17:03:45] DEBUG [django.db.backends:89] (0.002) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[14/Apr/2016 17:07:22] DEBUG [django.db.backends:89] (0.002) 
+            SELECT c.relname, c.relkind
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid); args=None
+[14/Apr/2016 17:07:22] DEBUG [django.db.backends:89] (0.001) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+[14/Apr/2016 17:07:38] WARNING [django.request:170] Not Found: /demo-data/review-5/
+[14/Apr/2016 17:07:46] DEBUG [django.db.backends:89] (0.003) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = '6u674cknbgc9tavti1g49uks9bpcx2gw' AND "django_session"."expire_date" > '2016-04-14T16:07:46.861000+00:00'::timestamptz); args=('6u674cknbgc9tavti1g49uks9bpcx2gw', datetime.datetime(2016, 4, 14, 16, 7, 46, 861000, tzinfo=<UTC>))
+[14/Apr/2016 17:07:46] DEBUG [django.db.backends:89] (0.002) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[14/Apr/2016 17:07:46] DEBUG [django.db.backends:89] (0.001) SELECT "demo_data_category"."id", "demo_data_category"."num" FROM "demo_data_category" WHERE "demo_data_category"."num" = 5; args=(5,)
+[14/Apr/2016 17:07:46] ERROR [django.request:256] Internal Server Error: /demo-data/category-5/
+Traceback (most recent call last):
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\lambo477\Documents\ub_scrapes\demo_data\views.py", line 14, in category_page
+    'reviews': Review.objects.filter(category=category)})
+NameError: global name 'category' is not defined
+[14/Apr/2016 17:09:36] DEBUG [django.db.backends:89] (0.004) 
+            SELECT c.relname, c.relkind
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid); args=None
+[14/Apr/2016 17:09:36] DEBUG [django.db.backends:89] (0.001) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+[14/Apr/2016 17:09:49] DEBUG [django.db.backends:89] (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = '6u674cknbgc9tavti1g49uks9bpcx2gw' AND "django_session"."expire_date" > '2016-04-14T16:09:49.520000+00:00'::timestamptz); args=('6u674cknbgc9tavti1g49uks9bpcx2gw', datetime.datetime(2016, 4, 14, 16, 9, 49, 520000, tzinfo=<UTC>))
+[14/Apr/2016 17:09:49] DEBUG [django.db.backends:89] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[14/Apr/2016 17:09:49] DEBUG [django.db.backends:89] (0.001) SELECT "demo_data_category"."id", "demo_data_category"."num" FROM "demo_data_category" WHERE "demo_data_category"."num" = 5; args=(5,)
+[14/Apr/2016 17:09:49] DEBUG [django.db.backends:89] (0.001) SELECT "demo_data_review"."id", "demo_data_review"."num", "demo_data_review"."category_id" FROM "demo_data_review" WHERE "demo_data_review"."category_id" = 5; args=(5,)
+[14/Apr/2016 17:09:49] ERROR [django.request:256] Internal Server Error: /demo-data/category-5/
+Traceback (most recent call last):
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\lambo477\Documents\ub_scrapes\demo_data\views.py", line 12, in category_page
+    reviews = Review.objects.get(category=category)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\db\models\query.py", line 338, in get
+    (self.model._meta.object_name, num)
+MultipleObjectsReturned: get() returned more than one Review -- it returned 10!
+[14/Apr/2016 17:09:49] DEBUG [django.db.backends:89] (0.001) SELECT "demo_data_review"."id", "demo_data_review"."num", "demo_data_review"."category_id" FROM "demo_data_review" LIMIT 21; args=()
+[14/Apr/2016 17:09:57] DEBUG [django.db.backends:89] (0.004) 
+            SELECT c.relname, c.relkind
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid); args=None
+[14/Apr/2016 17:09:57] DEBUG [django.db.backends:89] (0.001) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+[14/Apr/2016 17:09:58] DEBUG [django.db.backends:89] (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = '6u674cknbgc9tavti1g49uks9bpcx2gw' AND "django_session"."expire_date" > '2016-04-14T16:09:58.147000+00:00'::timestamptz); args=('6u674cknbgc9tavti1g49uks9bpcx2gw', datetime.datetime(2016, 4, 14, 16, 9, 58, 147000, tzinfo=<UTC>))
+[14/Apr/2016 17:09:58] DEBUG [django.db.backends:89] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[14/Apr/2016 17:09:58] DEBUG [django.db.backends:89] (0.000) SELECT "demo_data_category"."id", "demo_data_category"."num" FROM "demo_data_category" WHERE "demo_data_category"."num" = 5; args=(5,)
+[14/Apr/2016 17:09:58] ERROR [django.request:256] Internal Server Error: /demo-data/category-5/
+Traceback (most recent call last):
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\lambo477\Documents\ub_scrapes\demo_data\views.py", line 16, in category_page
+    'reviews': reviews})
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\loader.py", line 98, in render_to_string
+    template = get_template(template_name, using=using)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\loader.py", line 35, in get_template
+    return engine.get_template(template_name, dirs)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\backends\django.py", line 30, in get_template
+    return Template(self.engine.get_template(template_name, dirs))
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\engine.py", line 167, in get_template
+    template, origin = self.find_template(template_name, dirs)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\engine.py", line 141, in find_template
+    source, display_name = loader(name, dirs)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\loaders\base.py", line 13, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\loaders\base.py", line 23, in load_template
+    template = Template(source, origin, template_name, self.engine)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 190, in __init__
+    self.nodelist = engine.compile_string(template_string, origin)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\engine.py", line 261, in compile_string
+    return parser.parse()
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 341, in parse
+    compiled_result = compile_func(self, token)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\loader_tags.py", line 210, in do_extends
+    nodelist = parser.parse()
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 341, in parse
+    compiled_result = compile_func(self, token)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\loader_tags.py", line 184, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 341, in parse
+    compiled_result = compile_func(self, token)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\defaulttags.py", line 872, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 341, in parse
+    compiled_result = compile_func(self, token)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\defaulttags.py", line 1456, in url
+    kwargs[name] = parser.compile_filter(value)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 423, in compile_filter
+    return FilterExpression(token, self)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 639, in __init__
+    "from '%s'" % (token[upto:], token))
+TemplateSyntaxError: Could not parse the remainder: ',' from 'category.num,'
+[14/Apr/2016 17:09:58] DEBUG [django.db.backends:89] (0.001) SELECT "demo_data_review"."id", "demo_data_review"."num", "demo_data_review"."category_id" FROM "demo_data_review" WHERE "demo_data_review"."category_id" = 5 LIMIT 21; args=(5,)
+[14/Apr/2016 17:09:58] DEBUG [django.db.backends:89] (0.000) SELECT "demo_data_review"."id", "demo_data_review"."num", "demo_data_review"."category_id" FROM "demo_data_review" WHERE "demo_data_review"."category_id" = 5 LIMIT 21; args=(5,)
+[14/Apr/2016 17:09:58] DEBUG [django.db.backends:89] (0.000) SELECT "demo_data_review"."id", "demo_data_review"."num", "demo_data_review"."category_id" FROM "demo_data_review" WHERE "demo_data_review"."category_id" = 5 LIMIT 21; args=(5,)
+[14/Apr/2016 17:09:58] DEBUG [django.db.backends:89] (0.000) SELECT "demo_data_review"."id", "demo_data_review"."num", "demo_data_review"."category_id" FROM "demo_data_review" WHERE "demo_data_review"."category_id" = 5 LIMIT 21; args=(5,)
+[14/Apr/2016 17:09:58] DEBUG [django.db.backends:89] (0.000) SELECT "demo_data_review"."id", "demo_data_review"."num", "demo_data_review"."category_id" FROM "demo_data_review" WHERE "demo_data_review"."category_id" = 5 LIMIT 21; args=(5,)
+[14/Apr/2016 17:10:13] DEBUG [django.db.backends:89] (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = '6u674cknbgc9tavti1g49uks9bpcx2gw' AND "django_session"."expire_date" > '2016-04-14T16:10:13.354000+00:00'::timestamptz); args=('6u674cknbgc9tavti1g49uks9bpcx2gw', datetime.datetime(2016, 4, 14, 16, 10, 13, 354000, tzinfo=<UTC>))
+[14/Apr/2016 17:10:13] DEBUG [django.db.backends:89] (0.002) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[14/Apr/2016 17:10:13] DEBUG [django.db.backends:89] (0.001) SELECT "demo_data_category"."id", "demo_data_category"."num" FROM "demo_data_category" WHERE "demo_data_category"."num" = 5; args=(5,)
+[14/Apr/2016 17:10:13] DEBUG [django.db.backends:89] (0.001) SELECT "demo_data_review"."id", "demo_data_review"."num", "demo_data_review"."category_id" FROM "demo_data_review" WHERE "demo_data_review"."category_id" = 5; args=(5,)
+[14/Apr/2016 17:10:18] DEBUG [django.db.backends:89] (0.003) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = '6u674cknbgc9tavti1g49uks9bpcx2gw' AND "django_session"."expire_date" > '2016-04-14T16:10:18.586000+00:00'::timestamptz); args=('6u674cknbgc9tavti1g49uks9bpcx2gw', datetime.datetime(2016, 4, 14, 16, 10, 18, 586000, tzinfo=<UTC>))
+[14/Apr/2016 17:10:18] DEBUG [django.db.backends:89] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[14/Apr/2016 17:10:18] ERROR [django.request:256] Internal Server Error: /demo-data/category-5/review-4/
+Traceback (most recent call last):
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+TypeError: review_page() got an unexpected keyword argument 'category_num'
+[14/Apr/2016 17:10:36] DEBUG [django.db.backends:89] (0.004) 
+            SELECT c.relname, c.relkind
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid); args=None
+[14/Apr/2016 17:10:36] DEBUG [django.db.backends:89] (0.002) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+[14/Apr/2016 17:10:37] DEBUG [django.db.backends:89] (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = '6u674cknbgc9tavti1g49uks9bpcx2gw' AND "django_session"."expire_date" > '2016-04-14T16:10:37.172000+00:00'::timestamptz); args=('6u674cknbgc9tavti1g49uks9bpcx2gw', datetime.datetime(2016, 4, 14, 16, 10, 37, 172000, tzinfo=<UTC>))
+[14/Apr/2016 17:10:37] DEBUG [django.db.backends:89] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[14/Apr/2016 17:10:37] DEBUG [django.db.backends:89] (0.000) SELECT "demo_data_category"."id", "demo_data_category"."num" FROM "demo_data_category" WHERE "demo_data_category"."num" = 5; args=(5,)
+[14/Apr/2016 17:10:37] DEBUG [django.db.backends:89] (0.001) SELECT "demo_data_review"."id", "demo_data_review"."num", "demo_data_review"."category_id" FROM "demo_data_review" WHERE "demo_data_review"."category_id" = 5; args=(5,)
+[14/Apr/2016 17:10:39] DEBUG [django.db.backends:89] (0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = '6u674cknbgc9tavti1g49uks9bpcx2gw' AND "django_session"."expire_date" > '2016-04-14T16:10:39.729000+00:00'::timestamptz); args=('6u674cknbgc9tavti1g49uks9bpcx2gw', datetime.datetime(2016, 4, 14, 16, 10, 39, 729000, tzinfo=<UTC>))
+[14/Apr/2016 17:10:39] DEBUG [django.db.backends:89] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[14/Apr/2016 17:11:38] DEBUG [django.db.backends:89] (0.003) 
+            SELECT c.relname, c.relkind
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid); args=None
+[14/Apr/2016 17:11:38] DEBUG [django.db.backends:89] (0.001) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+[14/Apr/2016 17:11:38] DEBUG [django.db.backends:89] (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = '6u674cknbgc9tavti1g49uks9bpcx2gw' AND "django_session"."expire_date" > '2016-04-14T16:11:38.808000+00:00'::timestamptz); args=('6u674cknbgc9tavti1g49uks9bpcx2gw', datetime.datetime(2016, 4, 14, 16, 11, 38, 808000, tzinfo=<UTC>))
+[14/Apr/2016 17:11:38] DEBUG [django.db.backends:89] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[14/Apr/2016 17:11:38] DEBUG [django.db.backends:89] (0.000) SELECT "demo_data_category"."id", "demo_data_category"."num" FROM "demo_data_category" WHERE "demo_data_category"."num" = 5; args=(5,)
+[14/Apr/2016 17:11:38] DEBUG [django.db.backends:89] (0.001) SELECT "demo_data_review"."id", "demo_data_review"."num", "demo_data_review"."category_id" FROM "demo_data_review" WHERE ("demo_data_review"."category_id" = 5 AND "demo_data_review"."num" = 4); args=(5, 4)

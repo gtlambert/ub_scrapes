@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Demo Data Home
+{% endblock title %}
+
+
+{% block content %}
+	<ul class="inline-list">
+		{% for category in categories %}
+			<li>
+				<a href="{% url 'category-page' category_num=category.num %}">Category {{ category.num }}</a>
+			</li>
+		{% endfor %}	
+	</ul>
+	
+{% endblock content %}

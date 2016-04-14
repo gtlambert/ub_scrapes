@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block content %}
+	<h2>Category {{ category.num }}</h2>
+	<ul>
+		{% for review in reviews %}
+			<li>
+				<a href="{% url 'review-page' category_num=category.num review_num=review.num %}">Review {{ review.num }}</a>
+			</li>
+		{% endfor %}	
+	</ul>
+{% endblock content %}

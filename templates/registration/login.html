@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% load staticfiles %}
+
+{% block title %}
+Login
+{% endblock title %}
+
+{% block content %}
+	<div class="row">
+		<div class="columns large-8 large-offset-2 medium-8 medium-offset-2 small-10 small-offset-1 end">
+			<form action="" method="POST">
+				{% csrf_token %}
+				<div class="row">
+					<div class="columns large-8 large-offset-2 medium-8 medium-offset-2 small-12 end">
+						<label for="username">Username</label>
+						<input id="username" type="text" name="username">
+					</div>
+					<div class="columns large-8 large-offset-2 medium-8 medium-offset-2 small-12 end">
+						<label for="password">Password</label>
+						<input id="password" type="password" name="password">
+					</div>	
+				</div>
+				<div class="row">
+					<div class="columns large-8 large-offset-2 medium-8 medium-offset-2 small-12 end">
+						<input class="button success" type="submit" value="Login">
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+{% endblock content %}
