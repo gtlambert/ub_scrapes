@@ -1,0 +1,390 @@
+[14/Apr/2016 13:39:54] WARNING [django.security.SuspiciousSession:108] Session data corrupted
+[14/Apr/2016 13:39:54] WARNING [django.security.SuspiciousSession:108] Session data corrupted
+[14/Apr/2016 13:39:54] ERROR [django.request:256] Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\handlers\base.py", line 164, in get_response
+    response = response.render()
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\response.py", line 158, in render
+    self.content = self.rendered_content
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\response.py", line 135, in rendered_content
+    content = template.render(context, self._request)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\backends\django.py", line 74, in render
+    return self.template.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 209, in render
+    return self._render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 201, in _render
+    return self.nodelist.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 903, in render
+    bit = self.render_node(node, context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 917, in render_node
+    return node.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 201, in _render
+    return self.nodelist.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 903, in render
+    bit = self.render_node(node, context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 917, in render_node
+    return node.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 201, in _render
+    return self.nodelist.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 903, in render
+    bit = self.render_node(node, context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 917, in render_node
+    return node.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 903, in render
+    bit = self.render_node(node, context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 917, in render_node
+    return node.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 1195, in render
+    return func(*resolved_args, **resolved_kwargs)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\contrib\admin\templatetags\admin_static.py", line 17, in static
+    return _static(path)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\contrib\staticfiles\templatetags\staticfiles.py", line 9, in static
+    return staticfiles_storage.url(path)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\contrib\staticfiles\storage.py", line 131, in url
+    hashed_name = self.stored_name(clean_name)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\contrib\staticfiles\storage.py", line 280, in stored_name
+    cache_name = self.clean_name(self.hashed_name(name))
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\contrib\staticfiles\storage.py", line 94, in hashed_name
+    (clean_name, self))
+ValueError: The file 'admin/css/base.css' could not be found with <whitenoise.django.GzipManifestStaticFilesStorage object at 0x00000000042B4FD0>.
+[14/Apr/2016 13:39:54] WARNING [django.security.SuspiciousSession:108] Session data corrupted
+[14/Apr/2016 13:39:54] WARNING [django.security.SuspiciousSession:108] Session data corrupted
+[14/Apr/2016 13:39:54] ERROR [django.request:256] Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\handlers\base.py", line 164, in get_response
+    response = response.render()
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\response.py", line 158, in render
+    self.content = self.rendered_content
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\response.py", line 135, in rendered_content
+    content = template.render(context, self._request)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\backends\django.py", line 74, in render
+    return self.template.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 209, in render
+    return self._render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 201, in _render
+    return self.nodelist.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 903, in render
+    bit = self.render_node(node, context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 917, in render_node
+    return node.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 201, in _render
+    return self.nodelist.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 903, in render
+    bit = self.render_node(node, context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 917, in render_node
+    return node.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 201, in _render
+    return self.nodelist.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 903, in render
+    bit = self.render_node(node, context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 917, in render_node
+    return node.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 903, in render
+    bit = self.render_node(node, context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 917, in render_node
+    return node.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 1195, in render
+    return func(*resolved_args, **resolved_kwargs)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\contrib\admin\templatetags\admin_static.py", line 17, in static
+    return _static(path)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\contrib\staticfiles\templatetags\staticfiles.py", line 9, in static
+    return staticfiles_storage.url(path)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\contrib\staticfiles\storage.py", line 131, in url
+    hashed_name = self.stored_name(clean_name)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\contrib\staticfiles\storage.py", line 280, in stored_name
+    cache_name = self.clean_name(self.hashed_name(name))
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\contrib\staticfiles\storage.py", line 94, in hashed_name
+    (clean_name, self))
+ValueError: The file 'admin/css/base.css' could not be found with <whitenoise.django.GzipManifestStaticFilesStorage object at 0x00000000042B4FD0>.
+[14/Apr/2016 13:39:57] WARNING [django.security.SuspiciousSession:108] Session data corrupted
+[14/Apr/2016 13:39:57] WARNING [django.security.SuspiciousSession:108] Session data corrupted
+[14/Apr/2016 13:39:57] ERROR [django.request:256] Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\handlers\base.py", line 164, in get_response
+    response = response.render()
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\response.py", line 158, in render
+    self.content = self.rendered_content
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\response.py", line 135, in rendered_content
+    content = template.render(context, self._request)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\backends\django.py", line 74, in render
+    return self.template.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 209, in render
+    return self._render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 201, in _render
+    return self.nodelist.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 903, in render
+    bit = self.render_node(node, context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 917, in render_node
+    return node.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 201, in _render
+    return self.nodelist.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 903, in render
+    bit = self.render_node(node, context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 917, in render_node
+    return node.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 201, in _render
+    return self.nodelist.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 903, in render
+    bit = self.render_node(node, context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 917, in render_node
+    return node.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 903, in render
+    bit = self.render_node(node, context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 917, in render_node
+    return node.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 1195, in render
+    return func(*resolved_args, **resolved_kwargs)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\contrib\admin\templatetags\admin_static.py", line 17, in static
+    return _static(path)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\contrib\staticfiles\templatetags\staticfiles.py", line 9, in static
+    return staticfiles_storage.url(path)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\contrib\staticfiles\storage.py", line 131, in url
+    hashed_name = self.stored_name(clean_name)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\contrib\staticfiles\storage.py", line 280, in stored_name
+    cache_name = self.clean_name(self.hashed_name(name))
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\contrib\staticfiles\storage.py", line 94, in hashed_name
+    (clean_name, self))
+ValueError: The file 'admin/css/base.css' could not be found with <whitenoise.django.GzipManifestStaticFilesStorage object at 0x00000000042B4FD0>.
+[14/Apr/2016 13:42:21] WARNING [django.security.SuspiciousSession:108] Session data corrupted
+[14/Apr/2016 13:42:21] WARNING [django.security.SuspiciousSession:108] Session data corrupted
+[14/Apr/2016 13:42:21] ERROR [django.request:256] Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\handlers\base.py", line 164, in get_response
+    response = response.render()
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\response.py", line 158, in render
+    self.content = self.rendered_content
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\response.py", line 135, in rendered_content
+    content = template.render(context, self._request)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\backends\django.py", line 74, in render
+    return self.template.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 209, in render
+    return self._render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 201, in _render
+    return self.nodelist.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 903, in render
+    bit = self.render_node(node, context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 917, in render_node
+    return node.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 201, in _render
+    return self.nodelist.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 903, in render
+    bit = self.render_node(node, context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 917, in render_node
+    return node.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 201, in _render
+    return self.nodelist.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 903, in render
+    bit = self.render_node(node, context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 917, in render_node
+    return node.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 903, in render
+    bit = self.render_node(node, context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 917, in render_node
+    return node.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 1195, in render
+    return func(*resolved_args, **resolved_kwargs)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\contrib\admin\templatetags\admin_static.py", line 17, in static
+    return _static(path)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\contrib\staticfiles\templatetags\staticfiles.py", line 9, in static
+    return staticfiles_storage.url(path)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\contrib\staticfiles\storage.py", line 131, in url
+    hashed_name = self.stored_name(clean_name)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\contrib\staticfiles\storage.py", line 280, in stored_name
+    cache_name = self.clean_name(self.hashed_name(name))
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\contrib\staticfiles\storage.py", line 94, in hashed_name
+    (clean_name, self))
+ValueError: The file 'admin/css/base.css' could not be found with <whitenoise.django.GzipManifestStaticFilesStorage object at 0x00000000042C4FD0>.
+[14/Apr/2016 13:42:21] WARNING [django.security.SuspiciousSession:108] Session data corrupted
+[14/Apr/2016 13:42:21] WARNING [django.security.SuspiciousSession:108] Session data corrupted
+[14/Apr/2016 13:42:21] ERROR [django.request:256] Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\handlers\base.py", line 164, in get_response
+    response = response.render()
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\response.py", line 158, in render
+    self.content = self.rendered_content
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\response.py", line 135, in rendered_content
+    content = template.render(context, self._request)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\backends\django.py", line 74, in render
+    return self.template.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 209, in render
+    return self._render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 201, in _render
+    return self.nodelist.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 903, in render
+    bit = self.render_node(node, context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 917, in render_node
+    return node.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 201, in _render
+    return self.nodelist.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 903, in render
+    bit = self.render_node(node, context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 917, in render_node
+    return node.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 201, in _render
+    return self.nodelist.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 903, in render
+    bit = self.render_node(node, context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 917, in render_node
+    return node.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 903, in render
+    bit = self.render_node(node, context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 917, in render_node
+    return node.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 1195, in render
+    return func(*resolved_args, **resolved_kwargs)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\contrib\admin\templatetags\admin_static.py", line 17, in static
+    return _static(path)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\contrib\staticfiles\templatetags\staticfiles.py", line 9, in static
+    return staticfiles_storage.url(path)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\contrib\staticfiles\storage.py", line 131, in url
+    hashed_name = self.stored_name(clean_name)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\contrib\staticfiles\storage.py", line 280, in stored_name
+    cache_name = self.clean_name(self.hashed_name(name))
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\contrib\staticfiles\storage.py", line 94, in hashed_name
+    (clean_name, self))
+ValueError: The file 'admin/css/base.css' could not be found with <whitenoise.django.GzipManifestStaticFilesStorage object at 0x00000000042C4FD0>.
+[14/Apr/2016 13:42:33] WARNING [django.request:170] Not Found: /
+[14/Apr/2016 13:42:34] DEBUG [testapp.views:9] this is a logger debug message
+[14/Apr/2016 13:42:34] ERROR [testapp.views:10] this is a logger error message
+[14/Apr/2016 13:42:37] WARNING [django.security.SuspiciousSession:108] Session data corrupted
+[14/Apr/2016 13:42:37] WARNING [django.security.SuspiciousSession:108] Session data corrupted
+[14/Apr/2016 13:42:37] ERROR [django.request:256] Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\handlers\base.py", line 164, in get_response
+    response = response.render()
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\response.py", line 158, in render
+    self.content = self.rendered_content
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\response.py", line 135, in rendered_content
+    content = template.render(context, self._request)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\backends\django.py", line 74, in render
+    return self.template.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 209, in render
+    return self._render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 201, in _render
+    return self.nodelist.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 903, in render
+    bit = self.render_node(node, context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 917, in render_node
+    return node.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 201, in _render
+    return self.nodelist.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 903, in render
+    bit = self.render_node(node, context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 917, in render_node
+    return node.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 201, in _render
+    return self.nodelist.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 903, in render
+    bit = self.render_node(node, context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 917, in render_node
+    return node.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 903, in render
+    bit = self.render_node(node, context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 917, in render_node
+    return node.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 1195, in render
+    return func(*resolved_args, **resolved_kwargs)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\contrib\admin\templatetags\admin_static.py", line 17, in static
+    return _static(path)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\contrib\staticfiles\templatetags\staticfiles.py", line 9, in static
+    return staticfiles_storage.url(path)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\contrib\staticfiles\storage.py", line 131, in url
+    hashed_name = self.stored_name(clean_name)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\contrib\staticfiles\storage.py", line 280, in stored_name
+    cache_name = self.clean_name(self.hashed_name(name))
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\contrib\staticfiles\storage.py", line 94, in hashed_name
+    (clean_name, self))
+ValueError: The file 'admin/css/base.css' could not be found with <whitenoise.django.GzipManifestStaticFilesStorage object at 0x000000000423D860>.
+[14/Apr/2016 13:45:24] DEBUG [testapp.views:9] this is a logger debug message
+[14/Apr/2016 13:45:24] ERROR [testapp.views:10] this is a logger error message
+[14/Apr/2016 13:45:27] WARNING [django.security.SuspiciousSession:108] Session data corrupted
+[14/Apr/2016 13:45:27] WARNING [django.security.SuspiciousSession:108] Session data corrupted
+[14/Apr/2016 13:45:27] ERROR [django.request:256] Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\handlers\base.py", line 164, in get_response
+    response = response.render()
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\response.py", line 158, in render
+    self.content = self.rendered_content
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\response.py", line 135, in rendered_content
+    content = template.render(context, self._request)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\backends\django.py", line 74, in render
+    return self.template.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 209, in render
+    return self._render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 201, in _render
+    return self.nodelist.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 903, in render
+    bit = self.render_node(node, context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 917, in render_node
+    return node.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 201, in _render
+    return self.nodelist.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 903, in render
+    bit = self.render_node(node, context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 917, in render_node
+    return node.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 201, in _render
+    return self.nodelist.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 903, in render
+    bit = self.render_node(node, context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 917, in render_node
+    return node.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 903, in render
+    bit = self.render_node(node, context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 917, in render_node
+    return node.render(context)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\base.py", line 1195, in render
+    return func(*resolved_args, **resolved_kwargs)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\contrib\admin\templatetags\admin_static.py", line 17, in static
+    return _static(path)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\contrib\staticfiles\templatetags\staticfiles.py", line 9, in static
+    return staticfiles_storage.url(path)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\contrib\staticfiles\storage.py", line 131, in url
+    hashed_name = self.stored_name(clean_name)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\contrib\staticfiles\storage.py", line 280, in stored_name
+    cache_name = self.clean_name(self.hashed_name(name))
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\contrib\staticfiles\storage.py", line 94, in hashed_name
+    (clean_name, self))
+ValueError: The file 'admin/css/base.css' could not be found with <whitenoise.django.GzipManifestStaticFilesStorage object at 0x00000000042C5780>.
