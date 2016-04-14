@@ -1,10 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-	This is the homepage of the ub scrapes project
+{% extends "layout.html" %}
 
-</body>
-</html>
+{% block content %}
+	<div class="row">
+		<div class="columns large-12">
+			<h2>Uberated Data Capture</h2>
+			<form action="" method="POST">
+				{% csrf_token %}
+				<input class="button success round" type="submit" value="submit">
+			</form>		
+		</div>
+	</div>
+	
+{% endblock content %}

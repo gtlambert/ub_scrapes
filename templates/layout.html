@@ -1,0 +1,13 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block title %}{% endblock title %}</title>
+	<link rel="stylesheet" type="text/css" href="{% static "components/foundation/css/foundation.min.css" %}">
+</head>
+<body>
+	{% block content %}{% endblock content %}
+</body>
+</html>
+
