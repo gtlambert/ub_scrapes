@@ -1,0 +1,1 @@
+web: gunicorn ub_scrapes.wsgi --log-file -
