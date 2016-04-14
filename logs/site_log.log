@@ -468,3 +468,34 @@ ValueError: The file 'admin/css/base.css' could not be found with <whitenoise.dj
                 AND pg_catalog.pg_table_is_visible(c.oid); args=None
 [14/Apr/2016 14:04:27] DEBUG [django.db.backends:89] (0.001) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
 [14/Apr/2016 14:04:29] WARNING [django.request:170] Not Found: /
+[14/Apr/2016 14:19:33] WARNING [django.request:170] Not Found: /
+[14/Apr/2016 14:24:49] WARNING [django.request:170] Not Found: /
+[14/Apr/2016 14:25:37] DEBUG [django.db.backends:89] (0.003) 
+            SELECT c.relname, c.relkind
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid); args=None
+[14/Apr/2016 14:25:37] DEBUG [django.db.backends:89] (0.001) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+[14/Apr/2016 14:28:04] ERROR [django.request:256] Internal Server Error: /
+Traceback (most recent call last):
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\lambo477\Documents\ub_scrapes\scrapes\views.py", line 5, in home
+    return render(request, 'home.html')
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\loader.py", line 98, in render_to_string
+    template = get_template(template_name, using=using)
+  File "c:\users\lambo477\appdata\local\enthought\canopy\user\lib\site-packages\django\template\loader.py", line 46, in get_template
+    raise TemplateDoesNotExist(template_name)
+TemplateDoesNotExist: home.html
+[14/Apr/2016 14:29:00] DEBUG [django.db.backends:89] (0.004) 
+            SELECT c.relname, c.relkind
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid); args=None
+[14/Apr/2016 14:29:00] DEBUG [django.db.backends:89] (0.001) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
