@@ -5,9 +5,32 @@
 <head>
 	<title>{% block title %}{% endblock title %}</title>
 	<link rel="stylesheet" type="text/css" href="{% static "components/foundation/css/foundation.min.css" %}">
+	<script type="text/javascript" src="{% static "components/foundation/js/vendor/jquery.js" %}"></script>
+	<script type="text/javascript" src="{% static "components/foundation/js/foundation.min.js" %}"></script>
 </head>
 <body>
-	{% block content %}{% endblock content %}
+	<nav class="top-bar" data-topbar role="navigation">
+		<section class="top-bar-section">
+		    <ul class="right">
+		      	<li>
+		      		<a href="{% url 'logout' %}">Logout</a>
+		      	</li>
+		    </ul>
+		    <ul class="left">
+		      	<li>
+		      		<a href="{% url 'home' %}">Home</a>
+		      	</li>
+		      	<li>
+		      		<a href="{% url 'demo-data-home' %}">Demo Data</a>
+		      	</li>
+		    </ul>
+		  </section>
+	</nav>
+	<div class="row">
+		<div class="columns large-12">
+			{% block content %}{% endblock content %}
+		</div>
+	</div>
 </body>
 </html>
 

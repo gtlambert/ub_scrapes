@@ -8,9 +8,11 @@ Demo Data Home
 {% block content %}
 	<ul class="inline-list">
 		{% for category in categories %}
-			<li>
-				<a href="{% url 'category-page' category_num=category.num %}">Category {{ category.num }}</a>
-			</li>
+			<div>
+				<li>
+					<a href="{% url 'category-page' category_num=category.num %}">Category {{ category.num }}</a>
+				</li>	
+			</div>
 		{% endfor %}	
 	</ul>
 	
