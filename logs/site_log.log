@@ -3018,3 +3018,13 @@ WindowsError: [Error 3] The system cannot find the path specified: u'C:\\static\
 [15/Apr/2016 10:26:13] DEBUG [django.db.backends:89] (0.001) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
 [15/Apr/2016 10:27:58] DEBUG [django.db.backends:89] (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = '6u674cknbgc9tavti1g49uks9bpcx2gw' AND "django_session"."expire_date" > '2016-04-15T09:27:58.031000+00:00'::timestamptz); args=('6u674cknbgc9tavti1g49uks9bpcx2gw', datetime.datetime(2016, 4, 15, 9, 27, 58, 31000, tzinfo=<UTC>))
 [15/Apr/2016 10:27:58] DEBUG [django.db.backends:89] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[15/Apr/2016 10:45:48] DEBUG [django.db.backends:89] (0.003) 
+            SELECT c.relname, c.relkind
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid); args=None
+[15/Apr/2016 10:45:48] DEBUG [django.db.backends:89] (0.001) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+[15/Apr/2016 10:45:51] DEBUG [django.db.backends:89] (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = '6u674cknbgc9tavti1g49uks9bpcx2gw' AND "django_session"."expire_date" > '2016-04-15T09:45:51.493000+00:00'::timestamptz); args=('6u674cknbgc9tavti1g49uks9bpcx2gw', datetime.datetime(2016, 4, 15, 9, 45, 51, 493000, tzinfo=<UTC>))
+[15/Apr/2016 10:45:51] DEBUG [django.db.backends:89] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
