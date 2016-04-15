@@ -11,6 +11,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'scrapes',
     'demo_data',
+    'admin_honeypot',
 )
 
 MIDDLEWARE_CLASSES = (

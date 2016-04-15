@@ -10,13 +10,16 @@ import scrapes.views as scrapes_views
 import demo_data.urls as demo_data_urls
 
 urlpatterns = [
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^admin/',
+        include('admin_honeypot.urls', namespace='admin_honeypot')),
+    url(r'^makechangeshere/', include(admin.site.urls)),
 
-    # HOMEE
+    # HOME
     url(r'^$', login_required(scrapes_views.home), name='home'),
 
     url(r'^accounts/login/$', auth_views.login),
-    url(r'^accounts/logout/$', auth_views.logout, {'next_page': 'home'}, name='logout'),
+    url(r'^accounts/logout/$', auth_views.logout,
+        {'next_page': 'home'}, name='logout'),
 
     # DEMO_DATA
     url(r'^demo-data/', include(demo_data_urls)),
